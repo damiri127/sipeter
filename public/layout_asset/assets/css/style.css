@@ -1622,3 +1622,622 @@
     width: 1412px;
     box-sizing: border-box;
   }
+
+  /* halaman-data-pengguna */
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .container-1 {
+    background: linear-gradient(90deg, #1572E8, #1572E8);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 34px 25px 30px 0;
+    width: 317px;
+    box-sizing: border-box;
+  }
+  .container-2 {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .container-3 {
+    margin-top: 3px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .container-4 {
+    background: linear-gradient(90deg, #176FE0, #094798);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 66px 0 76px 42px;
+    width: fit-content;
+    box-sizing: border-box;
+  }
+  .data-pengguna {
+    background: #F9FBFD;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-bottom: 814px;
+    width: 1728px;
+    box-sizing: border-box;
+  }
+  .content {
+    border-radius: 5px;
+    position: absolute;
+    right: 34px;
+    bottom: 63px;
+    padding-left: 2px;
+    box-sizing: border-box;
+  }
+  .ini-judul-konten {
+    margin-bottom: 48px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 24px;
+    color: #434343;
+  }
+  .data-pengguna-5 {
+    margin-bottom: 26px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 25px;
+    color: #FFFFFF;
+  }
+  .data-pengguna-6 {
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    color: #B5CFF1;
+  }
+  .navbar {
+    box-shadow: 4px 4px 10.8px 0px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 22px 0 30px 1071px;
+    width: 1412px;
+    box-sizing: border-box;
+  }
+  .notification {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 0 11px 9px;
+    box-sizing: border-box;
+  }
+  /* .4 {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 13px;
+    color: #FFFFFF;
+  } */
+  .bell {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 22px;
+    height: 21px;
+  }
+  .photo-profile {
+    border-radius: 26px;
+    background: #D9D9D9;
+    width: 52px;
+    height: 52px;
+  }
+  .sidebar {
+    box-shadow: 4px 4px 10.8px 0px rgba(0, 0, 0, 0.07);
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .line-4 {
+    background: #FFFFFF;
+    margin-bottom: 6px;
+    width: 25px;
+    height: 3px;
+  }
+  .line-5 {
+    background: #FFFFFF;
+    margin-bottom: 5px;
+    width: 25px;
+    height: 3px;
+  }
+  .line-6 {
+    background: #FFFFFF;
+    width: 25px;
+    height: 3px;
+  }
+  .sipeter-logo {
+    position: absolute;
+    left: 29px;
+    top: 8px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .sipeter {
+    margin: 23px 0 37px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 800;
+    font-size: 21px;
+    color: #FFFFFF;
+  }
+  .s {
+    margin-right: 13.9px;
+    overflow-wrap: break-word;
+    font-family: 'Kumar One';
+    font-weight: 400;
+    font-size: 48px;
+    color: #FFFFFF;
+  }
+  .menu-dashboard {
+    margin: 0 2px 48.5px 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 243.5px;
+    box-sizing: border-box;
+  }
+  .components {
+    margin: 0 127.8px 37px 0;
+    display: inline-block;
+    align-self: center;
+    overflow-wrap: break-word;
+    font-family: 'Sen';
+    font-weight: 400;
+    font-size: 17px;
+    color: #7F7F7F;
+  }
+  .sidebar-profile {
+    margin-bottom: 63px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 258px;
+    box-sizing: border-box;
+  }
+  .photo-profile-8 {
+    border-radius: 26px;
+    background: #D9D9D9;
+    margin: 0 10px 2px 0;
+    width: 52px;
+    height: 52px;
+  }
+  .hizrian {
+    margin: 0 1px 13px 1px;
+    display: inline-block;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    color: #7F7F7F;
+  }
+  .administrator {
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 15px;
+    color: #575757;
+  }
+  .polygon-1 {
+    margin: 20px 0 27px 0;
+    width: 12px;
+    height: 7px;
+  }
+  .line-7 {
+    background: #434343;
+    position: absolute;
+    left: 0px;
+    top: 81px;
+    width: 1336px;
+    height: 1px;
+  }
+  .data-pengguna-9 {
+    margin: 0 2px 33px 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 243.5px;
+    box-sizing: border-box;
+  }
+  .data-kegiatan {
+    margin: 0 1px 41px 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 244.5px;
+    box-sizing: border-box;
+  }
+  .data-kesakitan {
+    margin: 0 2px 41px 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 243.5px;
+    box-sizing: border-box;
+  }
+  .data-gizi-kia {
+    margin: 0 2px 39px 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 243.5px;
+    box-sizing: border-box;
+  }
+  .data-id-pkm {
+    margin-bottom: 39px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 244.5px;
+    box-sizing: border-box;
+  }
+  .data-sp-2-tbulanan {
+    margin: 0 1px 39px 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 244.5px;
+    box-sizing: border-box;
+  }
+  .data-sp-2-ttahunan {
+    margin: 0 1px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: flex-start;
+    width: 244.5px;
+    box-sizing: border-box;
+  }
+  .ini-isi-konten {
+    margin: 0 1px;
+    align-self: flex-start;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    color: #A8A8A8;
+  }
+  .search-icon {
+    margin: 0 24px 3px 0;
+    width: 22px;
+    height: 22px;
+  }
+  .search {
+    margin-top: 3px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+  }
+  .search-bar-10 {
+    box-shadow: -4px 4px 10.8px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 7px;
+    background: #0F5ABC;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 11px 0 16px 18px;
+    width: 490px;
+    box-sizing: border-box;
+  }
+  .container-11 {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .clickbar-main {
+    border-radius: 6px;
+    background: #1572E8;
+    position: absolute;
+    left: 50%;
+    top: 333px;
+    translate: -50% 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 19px 0 12px 29px;
+    width: 317px;
+    box-sizing: border-box;
+  }
+  .data-pengguna-12 {
+    margin-bottom: 7px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFFFFF;
+  }
+  .segitiga-bawah {
+    margin: 8px 0 14px 0;
+    width: 12px;
+    height: 7px;
+  }
+  .user-icon {
+    margin: 1px 28.2px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 21.8px;
+    height: fit-content;
+    box-sizing: border-box;
+  }
+  .ellipse-10 {
+    width: 21.8px;
+    height: 17.9px;
+  }
+  .ellipse-9 {
+    border-radius: 5.1px;
+    background: #FFFFFF;
+    margin: 0 5.4px 0 6.2px;
+    width: 10.1px;
+    height: 10.1px;
+  }
+  .username {
+    margin: 12px 19px 15px 0;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 800;
+    font-size: 21px;
+    color: #D9D9D9;
+  }
+  .container-13 {
+    border-radius: 11px;
+    background: #31CE36;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3px 6.5px 3px 7px;
+    box-sizing: border-box;
+  }
+  .container-14 {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .container-15 {
+    background: #FFFFFF;
+    position: relative;
+    margin-right: 1px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 31px 364px 27px;
+    width: 316px;
+    box-sizing: border-box;
+  }
+  .container-16 {
+    margin-top: 3px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+  }
+  .container-17 {
+    background: linear-gradient(90deg, #1269DB, #1269DB);
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    translate: -50% 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 18px 31px 15px 42px;
+    width: 1412px;
+    box-sizing: border-box;
+  }
+  .container-18 {
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .segitiga-bawah-19 {
+    margin: 7px 0 7.5px 0;
+    width: 12px;
+    height: 7px;
+  }
+  .dashboard {
+    margin-bottom: 0.5px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    color: #92999C;
+  }
+  .vector-1 {
+    width: 27.5px;
+    height: 21.5px;
+  }
+  .segitiga-bawah-20 {
+    margin: 7px 0 14px 0;
+    width: 12px;
+    height: 7px;
+  }
+  .data-pengguna-21 {
+    margin-bottom: 7px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    color: #92999C;
+  }
+  .ellipse-922 {
+    border-radius: 5.1px;
+    background: #92999C;
+    margin: 0 5.4px 0 6.2px;
+    width: 10.1px;
+    height: 10.1px;
+  }
+  .ellipse-1023 {
+    width: 21.8px;
+    height: 17.9px;
+  }
+  .user-icon-24 {
+    margin-right: 27.7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 21.8px;
+    box-sizing: border-box;
+  }
+  .segitiga-bawah-25 {
+    margin: 10px 0 7px 0;
+    width: 12px;
+    height: 7px;
+  }
+  .data-kegiatan-26 {
+    margin-top: 3px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    color: #92999C;
+  }
+  .folder-image-streamline-ultimate-png {
+    background: url('https://fn12.com/api/clusters/cluster-fn12-prod-asia-southeast1/projects/YKq2CwWvNjvWaNKUJDWzmN/assets/images/d085a52c02e196f9b0e5e55a41ce6d740950b951?Expires=1712226202&KeyName=fn12-cdn&Signature=m21I9EgE1AWj5Y5YaY6bAUCOlIA=') 50% / cover no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+  .segitiga-bawah-27 {
+    margin: 8px 0 7px 0;
+    width: 12px;
+    height: 7px;
+  }
+  .data-kesakitan-28 {
+    margin-top: 1px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    color: #92999C;
+  }
+  .group-237468 {
+    margin-bottom: 1.7px;
+    width: 23.6px;
+    height: 20.3px;
+  }
+  .segitiga-bawah-29 {
+    margin: 8px 0 7px 0;
+    width: 12px;
+    height: 7px;
+  }
+  .data-gizi-kia-30 {
+    margin-top: 1px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    color: #92999C;
+  }
+  .gizi {
+    margin-bottom: 1px;
+    width: 23.4px;
+    height: 21px;
+  }
+  .segitiga-bawah-31 {
+    margin: 10px 0 7px 0;
+    width: 12px;
+    height: 7px;
+  }
+  .data-ppm {
+    margin-top: 3px;
+    display: inline-block;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    color: #92999C;
+  }
+  .folder-image-streamline-ultimate-png-32 {
+    background: url('https://fn12.com/api/clusters/cluster-fn12-prod-asia-southeast1/projects/YKq2CwWvNjvWaNKUJDWzmN/assets/images/d085a52c02e196f9b0e5e55a41ce6d740950b951?Expires=1712226202&KeyName=fn12-cdn&Signature=m21I9EgE1AWj5Y5YaY6bAUCOlIA=') 50% / cover no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+  .segitiga-bawah-33 {
+    margin: 7px 0;
+    width: 12px;
+    height: 7px;
+  }
+  .data-sp-2-tp-bulanan {
+    margin-right: 15.8px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    color: #92999C;
+  }
+  .folder-image-streamline-ultimate-png-34 {
+    background: url('https://fn12.com/api/clusters/cluster-fn12-prod-asia-southeast1/projects/YKq2CwWvNjvWaNKUJDWzmN/assets/images/d085a52c02e196f9b0e5e55a41ce6d740950b951?Expires=1712226202&KeyName=fn12-cdn&Signature=m21I9EgE1AWj5Y5YaY6bAUCOlIA=') 50% / cover no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+  .segitiga-bawah-35 {
+    margin: 7px 0;
+    width: 12px;
+    height: 7px;
+  }
+  .data-sp-2-tp-tahunan {
+    margin-right: 11.1px;
+    overflow-wrap: break-word;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    color: #92999C;
+  }
+  .folder-image-streamline-ultimate-png-36 {
+    background: url('https://fn12.com/api/clusters/cluster-fn12-prod-asia-southeast1/projects/YKq2CwWvNjvWaNKUJDWzmN/assets/images/d085a52c02e196f9b0e5e55a41ce6d740950b951?Expires=1712226202&KeyName=fn12-cdn&Signature=m21I9EgE1AWj5Y5YaY6bAUCOlIA=') 50% / cover no-repeat;
+    width: 24px;
+    height: 24px;
+  }
+  .container-37 {
+    box-shadow: 4px 4px 10.8px 0px rgba(0, 0, 0, 0.07), -4px 4px 10.8px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+    background: #FFFFFF;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 0 662px 25px;
+    box-sizing: border-box;
+  }
