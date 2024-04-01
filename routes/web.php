@@ -28,3 +28,7 @@ Route::get('/petugas', function () {
 Route::get('/kepala-puskesmas', function () {
     return view('kepala-puskesmas.layouts.kepus');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
