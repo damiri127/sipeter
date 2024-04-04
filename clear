@@ -1,0 +1,50 @@
+[33mcommit 9ca94c56e6547af414f1dba78aac30124cbd3ab6[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: damiri127 <damiricepri127@gmail.com>
+Date:   Wed Apr 3 20:05:16 2024 +0700
+
+    adding migration table 0.1
+
+[33mcommit 88ab352582bbb5ae8a617b18157854ee833b621d[m
+Merge: 1889611 8cc2c00
+Author: ANANTA PADMA KUSUMA <103485099+anantapk03@users.noreply.github.com>
+Date:   Mon Apr 1 16:16:09 2024 +0700
+
+    Merge pull request #1 from damiri127/ananta
+    
+    Merge Request - Branch Ananta - Sistem Terdistribusi - Edited file web.php adding routing /login AND edited file login.php
+
+[33mcommit 8cc2c0039bf0e73296e40e41e576c3dbf7a83310[m[33m ([m[1;31morigin/ananta[m[33m)[m
+Author: anantapk03 <anantapk03@gmail.com>
+Date:   Mon Apr 1 15:46:26 2024 +0700
+
+    Sistem terdistribusi - Edit file login.blade.php and add route for login
+
+[33mcommit 2405848a476c1bf6da40232e7e691ab3c675c2a2[m
+Author: anantapk03 <anantapk03@gmail.com>
+Date:   Mon Apr 1 13:54:42 2024 +0700
+
+    test
+
+[33mcommit 1889611f319b4f7897f182456a1832ec40af0bd1[m
+Author: MuhsakaFathurrahman <msakafathurrahman@gmail.com>
+Date:   Sun Mar 24 10:45:30 2024 +0700
+
+    adding login file
+
+[33mcommit c58bc6a0f176fe57e1f28f2a14f6c5eae3140a25[m
+Author: damiri127 <damiricepri127@gmail.com>
+Date:   Tue Mar 19 13:45:09 2024 +0700
+
+    adding dashobard view
+
+[33mcommit 78b436e69c821e113a756f6b780bed237df60bc7[m
+Author: damiri127 <damiricepri127@gmail.com>
+Date:   Sun Mar 17 20:58:54 2024 +0700
+
+    base project
+
+[33mcommit 3f52373ab96a7f4988ee5400a4be05195ef13684[m
+Author: Cepri Damiri <102884750+damiri127@users.noreply.github.com>
+Date:   Sun Mar 17 20:50:36 2024 +0700
+
+    Initial commit
