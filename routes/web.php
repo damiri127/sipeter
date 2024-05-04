@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PetugasLoket\PetugasLoketController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,11 @@ Route::get('/petugas', function () {
 Route::get('/kepala-puskesmas', function () {
     return view('kepala-puskesmas.layouts.kepus');
 });
+
+Route::get('/petugas_loket', [PetugasLoketController::class, 'index'])->name('dashboard_petugasloket');
+Route::get('/petugas_loket/datakunjungan', [PetugasLoketController::class, 'data_kunjungan'])->name('data_kunjungan');
+Route::get('/petugas_loket/datakunjungan/inputkunjunganbaru', [PetugasLoketController::class,'add_datakunjungan'])->name('add_datakunjungan');
+
 
 Route::get('/login', function () {
     return view('login');
