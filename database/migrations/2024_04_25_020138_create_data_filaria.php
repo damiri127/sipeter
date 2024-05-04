@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data_kesakitan', function (Blueprint $table) {
-            $table->id('id_datakesakitan')->autoIncrement();
+        Schema::create('data_filaria', function (Blueprint $table) {
+            $table->id('id_data_filaria');
             $table->unsignedBigInteger('pasien_id');
             $table->foreign('pasien_id')->references('id_pasien')->on('pasien');
-            //$table->foreignId('id_pasien');
-            $table->unsignedBigInteger('jeniskesakitan_id');
-            $table->foreign('jeniskesakitan_id')->references('id_jeniskesakitan')->on('jenis_kesakitan');
-            //$table->foreignId('id_jeniskesakitan');
+            $table->date('tanggal_pemeriksaan');
+            $table->enum('status_pengobatan', ['terobati', 'belum terobati']);
+            
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data_kesakitan');
+        Schema::dropIfExists('data_filaria');
     }
 };
