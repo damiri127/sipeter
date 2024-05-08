@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('data_penerimaobatfarmasi', function (Blueprint $table) {
             $table->id('id_penerimaobatfarmasi')->autoIncrement();
-            $table->unsignedBigInteger('id_users');
-            $table->foreign('id_users')->references('id_users')->on('users');
+            $table->unsignedBigInteger('id');
+            $table->foreign('id')->references('id')->on('users');
             $table->unsignedBigInteger('id_obatfarmasi');
             $table->foreign('id_obatfarmasi')->references('id_obatfarmasi')->on('dataobat_farmasi');
             $table->date('tanggal_pemberian');
