@@ -49,17 +49,19 @@
                             </tr>
                         </tfoot>
                         <tbody>
+                            @foreach ($pengunjung as $item )
                             <tr>
-                                <td>1</td>
-                                <td>05 September 2024</td>
-                                <td>Ayunda Risuch</td>
-                                <td>Poli Umum</td>
+                                <td>{{$item->id_kunjungan}}</td>
+                                <td>{{$item->tanggal_kunjungan}}</td>
+                                <td>{{$item->data_pengunjung->nama_pengunjung}}</td>
+                                <td>{{$item->tujuan_kunjungan}}</td>
                                 <td>
                                     <a href="#" class="btn btn-sm btn-info">Info</a>
                                     <a href="#" class="btn btn-sm btn-warning">Update</a>
                                     <a href="#" class="btn btn-sm btn-danger">Hapus</a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -5,19 +5,24 @@
             <div class="card-header">
                 <h2>Registrasi Pengunjung Baru</h2>
             </div>
-            <form action="#">
+            <form action="{{route('insert_datakunjungan')}}" method="POST">
+                @csrf
                 <div class="card-body" id="form-input">
                     <div class="form-group">
                         <label for="inpukNIK">Nomor NIK </label>
-                        <input id="inputNama" type="number" name="name" class="form-control" maxlength="16" required placeholder="16 Digit Angka NIK">
+                        <input id="inputNama" type="number" name="NIK" class="form-control" maxlength="16" required placeholder="16 Digit Angka NIK">
                     </div>
                     <div class="form-group">
                         <label for="inpukNama">Nama</label>
                         <input id="inputNama" type="text" name="nama_pengunjung" class="form-control" required placeholder="Masukan Nama sesuai Kartu Identitas">
                     </div>
                     <div class="form-group">
+                        <label for="inputKecamatanWali">Nomor Telepon</label>
+                        <input id="inputKecamatanWali" type="text" name="nomor_telepon" maxlength="13" class="form-control" required placeholder="Asal Kecamatan Wali Sesuai kartu Identitas">
+                    </div>
+                    <div class="form-group">
                         <label for="inputJeniKelamin">Jenis Kelamin</label>
-                        <select id="inputJenisKelamin" type="text" name="asal_kecamatan" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
+                        <select id="inputJenisKelamin" type="text" name="jenis_kelamin" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
                             <option value="laki-laki">Laki-laki</option>
                             <option value="perempuan">Perempuan</option>
                         </select>
@@ -44,17 +49,17 @@
                     </div>
                     <div class="form-group">
                         <label for="selectStatusPernikahan">Status Pernikahan</label>
-                        <select id="selectStatusPernikahan" name="status_pernikahan" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
+                        <select id="selectStatusPernikahan" name="status_menikah" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
                             <option value="Sudah Menikah">Sudah Menikah</option>
                             <option value="Belum Menikah">Belum Menikah</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="selectAsuransi">Asuransi Pengunjung</label>
-                        <select id="selectAsuransi" name="select_aAsuransi" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
-                            <option value="Sudah Menikah">BPJS/KIS</option>
-                            <option value="Belum Menikah">Asuransi Lainnya</option>
-                            <option value="Belum Menikah">Reguler</option>
+                        <select id="selectAsuransi" name="asuransi" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
+                            <option value="BPJS">BPJS/KIS</option>
+                            <option value="AsuranSI Lainnya">Asuransi Lainnya</option>
+                            <option value="Reguler">Reguler</option>
                         </select>
                     </div>
                     {{-- DATA WALI PASIEN --}}
@@ -63,12 +68,8 @@
                         <input id="inputNamaWali" type="text" name="nama_wali" class="form-control" required placeholder="Asal Kecamatan Wali Sesuai kartu Identitas">
                     </div>
                     <div class="form-group">
-                        <label for="selectHubunganWali">Hubungan Dengan Pengunjung</label>
-                        <select id="selectHubunganWali" name="hubungan_pengunjung" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
-                            <option value="Orang Tua">Orang Tua</option>
-                            <option value="Saudara">Saudara</option>
-                            <option value="Kerabat Dekat">Kerabat Dekat</option>
-                        </select>
+                        <label for="inputKecamatanWali">Nomor Telepon Wali</label>
+                        <input id="inputKecamatanWali" type="text" name="nomor_teleponwali" maxlength="13" class="form-control" required placeholder="Asal Kecamatan Wali Sesuai kartu Identitas">
                     </div>
                     <div class="form-group">
                         <label for="inputKecamatanWali">Asal Kecamatan Wali</label>
@@ -82,18 +83,18 @@
                         <label for="inputAlamatLengkapWali">Alamat Lengkap Wali</label>
                         <input id="inputAlamatLengkapWali" type="text" name="alamat_lengkapwali" class="form-control" required placeholder="Alamat Lengkap Wali Sesuai kartu Identitas">
                     </div>
+
+                    {{-- TUJUAN KUNJUNGAN PASIEN --}}
                     <div class="form-group">
                         <label for="selectTujuanKunjungan">Tujuan Kunjungan</label>
                         <select id="selectTujuanKunjungan" name="tujuan_kunjungan" class="form-control" required placeholder="Pilih Tujuan Kunjungan">
                             <option value="Poli Umum">Poli Umum</option>
-                            <option value="Poli KIA,KB, dan Imunisasi">Poli KIA,KB, dan Imunisasi</option>
+                            <option value="Poli KIA, KB, dan Imunisasi">Poli KIA,KB, dan Imunisasi</option>
                             <option value="Poli Gizi">Poli Gizi</option>
                             <option value="Poli TB dan Kusta">Poli TB dan Kusta</option>
                             <option value="Poli ISPA">Poli ISPA</option>
-                            <option value="IGD">UGD</option>
-                            <option value="Poned">Poned</option>
+                            <option value="UGD">UGD</option>
                             <option value="Laboratorium">Laboratorium</option>
-                            <option value="Farmasi">Farmasi / Obat</option>
                         </select>
                     </div>
                 </div>

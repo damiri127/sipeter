@@ -15,10 +15,10 @@ class userseeders extends Seeder
     {
         //
         DB::table('users')->insert([
-            'name' => "Admin Ananta",
-            'username' => '2ndAnta',
+            'name' => "Petugas Ananta",
+            'username' => 'petugasloket',
             'password' => bcrypt('developers'),
-            'level'=> "Admin"
+            'level'=> "petugas-loket"
         ]);
     }
 }

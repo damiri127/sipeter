@@ -27,7 +27,7 @@ class LoginController extends Controller
                 return redirect()->intended('kepala-puskesmas');
                 //dd("kepala-puskesmas");
             }elseif(auth()->user()->level == "petugas-loket"){
-                return redirect()->intended('petugas-loket');
+                return redirect()->intended('petugas_loket');
             }
         }
 
