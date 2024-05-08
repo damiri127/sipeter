@@ -9,26 +9,36 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function authentication(Request $request):RedirectResponse{
+    public function authentication(Request $request): RedirectResponse
+    {
+        //Validatie 
         $credentials = $request->validate([
-            'username' => ['required'], 
+            'username' => ['required'],
             'password' => ['required'],
         ]);
 
-        if(Auth::attempt($credentials)){
+        //Check Credentials
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            //dd(Auth::user()->level);
-            if (auth()->user()->level === "admin") {
-                return redirect()->to('admin');
-                //dd("admin kontol");
-            }elseif (auth()->user()->level == "kepala-puskesmas"){
-                return redirect()->to('kepala-puskesmas');
+            // dd(Auth::user()->level);
+            if (auth()->user()->level == "admin") {
+                return redirect(route('admin'));
+                //dd("admin ganteng");
+            } elseif (auth()->user()->level == "kepala-puskesmas") {
+                return redirect()->intended('kepala-puskesmas');
                 //dd("kepala-puskesmas");
-            }elseif(auth()->user()->level == "petugas-loket"){
-                return redirect()->to('petugas-loket');
+            } elseif (auth()->user()->level == "petugas-loket") {
+                return redirect()->intended('petugas_loket');
             }
+
+            return back()->withErrors('Error');
         }
-        return back()->withErrors('gagal login cuyy');
-        
+
+
+        function logout()
+        {
+            Auth::logout();
+            return redirect()->intended('/login');
+        }
     }
 }
