@@ -1,6 +1,33 @@
 @extends('petugas_loket.layouts.layout')
 @section('content')
     <div class="container-fluid">
+
+        @if (session("success"))
+        <script>
+            swal("Berhasil", "{{session('success')}}", {
+                icon : "success",
+                buttons: {
+                    confirm: {
+                        className : 'btn btn-success'
+                    }
+                },
+            });
+        </script>
+        @endif
+        
+        @if (session('error'))
+        <script>
+            swal("Gagal!", "{{session('error')}}", {
+                icon : "error",
+                buttons: {
+                    confirm: {
+                        className : 'btn btn-danger'
+                    }
+                },
+            });
+        </script>
+        @endif
+
         <div class="card" id="card-input-pengunjung">
             <div class="card-header">
                 <div class="d-flex justify-content-between">
@@ -22,7 +49,6 @@
                 </div>
             </div>
         </div>
-
         <div class="card" id="card-informasi-pengunjung">
             <div class="card-header">
                 <h2>Data Pengunjung</h2>

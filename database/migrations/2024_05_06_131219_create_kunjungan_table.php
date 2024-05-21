@@ -23,6 +23,7 @@ return new class extends Migration
                 'UGD',
                 'Laboratorium',
             ]);
+            $table->enum('status_penanganan', ["Sudah", "Belum"]);
             $table->dateTime('tanggal_kunjungan');
             $table->timestamps();
         });

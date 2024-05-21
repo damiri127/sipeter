@@ -23,6 +23,10 @@ class PetugasLoketController extends Controller
 
     public function add_datakunjungan()
     {
+        // $responses = [
+        //     "response"=>"200",
+        //     "messege"=>"Pengunjung merupakan pengunjung lama"
+        // ];
         return view('petugas_loket.mengelola_datakunjungan.tambah_pengunjungbaru');
     }
 
@@ -32,7 +36,8 @@ class PetugasLoketController extends Controller
 
         if($checkDoublePengunjung != null)
         {
-            return redirect(route('data_kunjungan'))->with("Data Pengunjung Sudah Ada");
+
+            return redirect(route('data_kunjungan'))->with("error","NIK yang anda masukan sudah terdaftar sebagai pengunjung lama");
         } 
         else
         {
@@ -59,14 +64,13 @@ class PetugasLoketController extends Controller
             $kunjungan = new Kunjungan;
             $kunjungan->id_pengunjung = $findPengunjung->id_pengunjung;
             $kunjungan->tujuan_kunjungan = $request->tujuan_kunjungan;
+            $kunjungan->status_penanganan = "Belum";
             $kunjungan->save();
+
     
-            return redirect(route('data_kunjungan'))->with("SUKSES!");
+            return redirect(route('data_kunjungan'))->with('success', 'Data Berhasil Ditambahkan');
         }
 
     }
-
-
-
 
 }

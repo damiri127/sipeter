@@ -22,6 +22,7 @@
 <script src="{{asset("layout_asset/examples/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js")}}"></script>
 <!-- Sweet Alert -->
 <script src="{{asset("layout_asset/examples/assets/js/plugin/sweetalert/sweetalert.min.js")}}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- Atlantis JS -->
 <script src="{{asset("layout_asset/examples/assets/js/atlantis.min.js")}}"></script>
 
