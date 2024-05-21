@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('data_ibuhamil', function (Blueprint $table) {
             $table->id('id_dataibuhamil')->autoIncrement();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id_users')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->enum('kategori', ['K1', 'K4']);
             $table->integer('paritas');
             $table->integer('jarak_kehamilan');

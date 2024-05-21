@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('data_bumilresiko', function (Blueprint $table) {
             $table->id('data_bumilresiko')->autoIncrement();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id_users')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->enum('pendarahan', ['Ya', 'Tidak']);
             $table->enum('infeksi', ['Ya', 'Tidak']);
             $table->enum('keracunan_kehamilan', ['Ya', 'Tidak']);
