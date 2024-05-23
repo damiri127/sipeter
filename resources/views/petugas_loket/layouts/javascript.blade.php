@@ -30,6 +30,8 @@
 <script >
     $(document).ready(function() {
         $('#basic-datatables').DataTable({
+            order:[],
+            lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]] // Menyediakan pilihan untuk jumlah baris per halaman
         });
 
         $('#multi-filter-select').DataTable( {

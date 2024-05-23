@@ -61,8 +61,37 @@
 		<!-- Main content -->
 		<div class="main-panel">
 			<div class="content">
+				@yield('content_header')
 				<div class="page-inner">
 					@yield('content')
+					{{-- Session Messege Responses --}}
+					<div id="sessionMessegeResponse">
+						@if (session("success"))
+						<script>
+							swal("Berhasil", "{{session('success')}}", {
+								icon : "success",
+								buttons: {
+									confirm: {
+										className : 'btn btn-success'
+									}
+								},
+							});
+						</script>
+						@endif
+			
+						@if (session('error'))
+							<script>
+								swal("Gagal!", "{{session('error')}}", {
+									icon : "error",
+									buttons: {
+										confirm: {
+											className : 'btn btn-danger'
+										}
+									},
+								});
+							</script>
+						@endif
+					</div>
 				</div>
 			</div>
 		</div>

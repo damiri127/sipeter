@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Kunjungan;
 use App\Models\Pengunjung;
 use Illuminate\Http\Request;
+use DB;
 
 class PetugasLoketController extends Controller
 {
@@ -17,16 +18,12 @@ class PetugasLoketController extends Controller
 
     public function data_kunjungan()
     {
-        $pengunjung = Kunjungan::latest()->paginate(5);
+        $pengunjung = Kunjungan::orderByDesc('tanggal_kunjungan')->get();
         return view('petugas_loket.mengelola_datakunjungan.data_kunjungan', ['pengunjung' => $pengunjung]);
     }
 
     public function add_datakunjungan()
     {
-        // $responses = [
-        //     "response"=>"200",
-        //     "messege"=>"Pengunjung merupakan pengunjung lama"
-        // ];
         return view('petugas_loket.mengelola_datakunjungan.tambah_pengunjungbaru');
     }
 
@@ -70,6 +67,55 @@ class PetugasLoketController extends Controller
     
             return redirect(route('data_kunjungan'))->with('success', 'Data Berhasil Ditambahkan');
         }
+
+    }
+
+    public function edit_datakunjungan(Request $request, $id_kunjungan){
+        $dataKunjungan = Kunjungan::find($id_kunjungan);
+        if($dataKunjungan->status_penanganan == "Sudah"){
+            return redirect(route('data_kunjungan'))->with('error', 'Pengunjung Sudah Ditangani');
+        }
+
+        return view('petugas_loket.mengelola_datakunjungan.update_datakunjungan', ['data_kunjungan' => $dataKunjungan]);
+    }
+
+    public function update_datakunjungan(Request $request, $id_kunjungan){
+
+        $dataKunjungan = Kunjungan::find($id_kunjungan);
+        $dataKunjungan->tujuan_kunjungan = $request->tujuan_kunjungan;
+        $dataKunjungan->update();
+
+        return redirect(route('data_kunjungan'))->with('success', "Data Kunjungan berhasil diperbarui");
+        
+    }
+
+    public function delete_datakunjungan(Request $request, $id_datakunjungan){
+        $dataKunjungan = Kunjungan::find($id_datakunjungan);
+        if($dataKunjungan->status_penanganan == "Sudah"){
+            return redirect(route('data_kunjungan'))->with('error', 'Pengunjung Sudah Ditangani');
+        }
+        $dataKunjungan->delete();
+        return redirect(route('data_kunjungan'))->with('success','Data Kunjungan Dihapus');
+    }
+
+    public function validation_pengunjunglama(Request $request){
+        $dataPengunjungLama = Pengunjung::where('NIK',$request->NIK)->first();
+        if($dataPengunjungLama == null){
+            return redirect(route('data_kunjungan'))->with('error', 'Data Pengunjung Lama Tidak Ditemukan');
+        }
+        //dd($dataPengunjungLama);
+        return view('petugas_loket.mengelola_datakunjungan.tambah_pengunjunglama', ['data_pengunjung'=>$dataPengunjungLama]);
+    }
+
+    public function insert_kunjunganPengunjungLama(Request $request, $id_pengunjung){
+
+        $dataKunjungan = new Kunjungan();
+        $dataKunjungan->id_pengunjung = $id_pengunjung;
+        $dataKunjungan->tujuan_kunjungan = $request->tujuan_kunjungan;
+        $dataKunjungan->status_penanganan = "Belum";
+        $dataKunjungan->save();
+
+        return redirect(route('data_kunjungan'))->with('success', 'Data Kunjungan Berhasil Dimasukan');
 
     }
 
