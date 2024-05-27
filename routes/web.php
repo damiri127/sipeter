@@ -1,10 +1,11 @@
 <?php
 
 
-use App\Http\Controllers\PetugasLoket\PetugasLoketController;
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PetugasLoket\PetugasLoketController;
+use App\Http\Controllers\PoliUmum\PoliUmumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,11 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,petugas-loket']], functio
     Route::get('/petugas_loket/datakunjungan/inputkunjunganbaru', [PetugasLoketController::class,'add_datakunjungan'])->name('add_datakunjungan');
     Route::post('/petugas_loket/datakunjungan/insertkunjunganbaru', [PetugasLoketController::class,'insert_datapengunjung'])->name('insert_datakunjungan');
     
+});
+
+Route::group(['middleware' => ['auth', 'ceklevel:admin,poliumum']], function(){ 
+    Route::get('/poliumum', [PoliUmumController::class, 'index'])->name('dashboard_poliumum');
+    Route::get('/poliumum/datakunjungan', [PoliUmumController::class, 'data_poli'])->name('data_kunjungan');
 });
 
 
