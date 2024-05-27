@@ -24,6 +24,8 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="{{asset("layout_asset/examples/assets/css/demo.css")}}">
+	{{-- JAVASCRIPT --}}
+	@include('petugas_loket.layouts.javascript')
 </head>
 <body>
 	<div class="wrapper">
@@ -59,17 +61,41 @@
 		<!-- Main content -->
 		<div class="main-panel">
 			<div class="content">
+				@yield('content_header')
 				<div class="page-inner">
 					@yield('content')
+					{{-- Session Messege Responses --}}
+					<div id="sessionMessegeResponse">
+						@if (session("success"))
+						<script>
+							swal("Berhasil", "{{session('success')}}", {
+								icon : "success",
+								buttons: {
+									confirm: {
+										className : 'btn btn-success'
+									}
+								},
+							});
+						</script>
+						@endif
+			
+						@if (session('error'))
+							<script>
+								swal("Gagal!", "{{session('error')}}", {
+									icon : "error",
+									buttons: {
+										confirm: {
+											className : 'btn btn-danger'
+										}
+									},
+								});
+							</script>
+						@endif
+					</div>
 				</div>
 			</div>
 		</div>
 		<!-- End Main content -->
 	</div>
-
-	
-
-	{{-- JAVASCRIPT --}}
-	@include('petugas_loket.layouts.javascript')
 </body>
 </html>

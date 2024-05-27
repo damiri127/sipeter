@@ -55,5 +55,5 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::post('/login', [LoginController::class, 'authentication']);
-Route::get('/logout', [LoginController::class, 'logout']);
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 

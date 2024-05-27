@@ -36,11 +36,10 @@ class LoginController extends Controller
             return back()->withErrors('Error');
         }
 
-
-        function logout()
-        {
-            Auth::logout();
-            return redirect()->intended('/login');
-        }
+    }
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->intended('/login');
     }
 }

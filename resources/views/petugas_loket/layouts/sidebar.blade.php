@@ -53,6 +53,16 @@
                         <p>Data Pengunjung</p>
                     </a>
                 </li>
+                @if (Route::currentRouteName()=='index_arsippengunjung')
+                <li class="nav-item active">
+                @else
+                <li class="nav-item ">
+                @endif
+                    <a href="{{route('index_arsippengunjung')}}">
+                        <i class="flaticon-archive"></i>
+                        <p>Arsip Data Pengunjung</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
