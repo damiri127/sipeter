@@ -1,10 +1,11 @@
 <?php
 
 
-use App\Http\Controllers\PetugasLoket\PetugasLoketController;
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PoliUmum\PoliUmumController;
+use App\Http\Controllers\PetugasLoket\PetugasLoketController;
 use App\Http\Controllers\PetugasLoket\ArsipPengunjungController;
 
 /*
@@ -44,7 +45,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,petugas-loket']], functio
     Route::get('/petugas_loket/datakunjungan/hapusKunjungan/{id_kunjungan}', [PetugasLoketController::class,'delete_datakunjungan'])->name('delete_datakunjungan');
     Route::post('/petugas_loket/datakunjungan/validasikunjunganlama', [PetugasLoketController::class,'validation_pengunjunglama'])->name('validation_pengunjunglama');
     Route::post('/petugas_loket/datakunjungan/inputKunjunganPengunjungLama/{id_pengunjung}', [PetugasLoketController::class,'insert_kunjunganPengunjungLama'])->name('insert_kunjunganPengunjungLama');
-    
+
 
     Route::get('/petugas_loket/arsip-pengunjunng',[ArsipPengunjungController::class, 'index'])->name('index_arsippengunjung');
     Route::get('/petugas_loket/arsip-pengunjunng/add_datapengunjung',[ArsipPengunjungController::class, 'add_datapengunjung'])->name('add_datapengunjung');
@@ -52,9 +53,11 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,petugas-loket']], functio
     Route::get('/petugas_loket/arsip-pengunjung/edit_data/{id_pengunjung}',[ArsipPengunjungController::class, 'edit_datapengunjung'])->name('edit_datapengunjung');
     Route::post('/petugas_loket/arsip-pengunjung/update_data/{id_pengunjung}',[ArsipPengunjungController::class, 'update_datapengunjung'])->name('update_datapengunjung');
     Route::get('/petugas_loket/arsip-pengunjung/delete_data/{id_pengunjung}',[ArsipPengunjungController::class, 'delete_datapengunjung'])->name('delete_datapengunjung');
-    
-    
-    
+});
+
+Route::group(['middleware' => ['auth', 'ceklevel:admin,poliumum']], function(){ 
+    Route::get('/poliumum', [PoliUmumController::class, 'index'])->name('dashboard_poliumum');
+    Route::get('/poliumum/datakunjungan', [PoliUmumController::class, 'data_poli'])->name('data_poliumum');
 });
 
 
