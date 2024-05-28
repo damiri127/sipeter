@@ -7,13 +7,26 @@ use App\Models\Kunjungan;
 use App\Models\Pengunjung;
 use Illuminate\Http\Request;
 use DB;
+use Carbon\Carbon;
 
 class PetugasLoketController extends Controller
 {
     //
     public function index()
     {
-        return view('petugas_loket.index');
+        $thirtyDaysAgo = Carbon::now()->subDays(30);
+
+        $kunjungan_poliumum = Kunjungan::where('tanggal_kunjungan', '>=', $thirtyDaysAgo)->where('tujuan_kunjungan', '=', 'PolI Umum')->count();
+        $kunjungan_politbdankusta = Kunjungan::where('tanggal_kunjungan', '>=', $thirtyDaysAgo)->where('tujuan_kunjungan', '=', 'Poli TB dan Kusta')->count();
+        $kunjungan_poligizi = Kunjungan::where('tanggal_kunjungan', '>=', $thirtyDaysAgo)->where('tujuan_kunjungan', '=', 'Poli Gizi')->count();
+        $kunjungan_polikiadankb = Kunjungan::where('tanggal_kunjungan', '>=', $thirtyDaysAgo)->where('tujuan_kunjungan', '=', 'Poli KIA, KB, dan Imunisasi')->count();
+        $kunjungan_ugd = Kunjungan::where('tanggal_kunjungan', '>=', $thirtyDaysAgo)->where('tujuan_kunjungan', '=', 'UGD')->count();
+        $kunjungan_poliispa = Kunjungan::where('tanggal_kunjungan', '>=', $thirtyDaysAgo)->where('tujuan_kunjungan', '=', 'Poli ISPA')->count();
+        $kunjungan_laboratorium = Kunjungan::where('tanggal_kunjungan', '>=', $thirtyDaysAgo)->where('tujuan_kunjungan', '=', 'Laboratorium')->count();
+
+        $data = [$kunjungan_poliumum, $kunjungan_politbdankusta, $kunjungan_polikiadankb, $kunjungan_poligizi, $kunjungan_ugd, $kunjungan_poliispa, $kunjungan_laboratorium];
+
+        return view('petugas_loket.index', ['data'=>$data]);
     }
 
     public function data_kunjungan()
