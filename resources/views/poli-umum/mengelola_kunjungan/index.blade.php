@@ -43,7 +43,7 @@
                                 <th>No</th>
                                 <th>Waktu Kunjungan</th>
                                 <th>Nama Pasien</th>
-                                <th>Waktu Penanganan</th>
+                                {{-- <th>Waktu Penanganan</th> --}}
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -52,11 +52,19 @@
                                 <th>No</th>
                                 <th>Waktu Kunjungan</th>
                                 <th>Nama Pasien</th>
-                                <th>Waktu Penanganan</th>
+                                {{-- <th>Waktu Penanganan</th> --}}
                                 <th>Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>
+                            @foreach ($pengunjung as $item)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->tanggal_kunjungan }}</td>
+                                    <td>{{ $item->nama_pengunjung }}</td>
+                                    <td>aksi</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

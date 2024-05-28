@@ -8,8 +8,8 @@
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
-                            Petugas Loket
-                            <span class="user-level">Petugas Loket</span>
+                            Poli Umum
+                            <span class="user-level">Poli Umum</span>
                             <span class="caret"></span>
                         </span>
                     </a>
@@ -43,12 +43,12 @@
                     </span>
                     <h4 class="text-section">Data Kunjungan</h4>
                 </li>
-                @if (Route::currentRouteName()=='data_kunjungan')
+                @if (Route::currentRouteName()=='data_poliumum')
                 <li class="nav-item active">
                 @else
                 <li class="nav-item ">
                 @endif
-                    <a href="{{ route('data_kunjungan') }}">
+                    <a href="{{ route('data_poliumum') }}">
                         <i class="fas fa-user"></i>
                         <p>Catatan Poli Umum</p>
                     </a>
