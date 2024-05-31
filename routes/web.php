@@ -58,6 +58,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,petugas-loket']], functio
 Route::group(['middleware' => ['auth', 'ceklevel:admin,poliumum']], function(){ 
     Route::get('/poliumum', [PoliUmumController::class, 'index'])->name('dashboard_poliumum');
     Route::get('/poliumum/datakunjungan', [PoliUmumController::class, 'data_poli'])->name('data_poliumum');
+    Route::get('/poliumum/datakunjungan/update/{id_kunjungan}', [PoliUmumController::class, 'add_rekammedis']);
 });
 
 

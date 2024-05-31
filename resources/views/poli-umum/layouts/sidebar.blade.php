@@ -46,7 +46,7 @@
                 @if (Route::currentRouteName()=='data_poliumum')
                 <li class="nav-item active">
                 @else
-                <li class="nav-item ">
+                <li class="nav-item active">
                 @endif
                     <a href="{{ route('data_poliumum') }}">
                         <i class="fas fa-user"></i>

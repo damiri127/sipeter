@@ -18,7 +18,23 @@ class PoliUmumController extends Controller
         $kunjungan = DB::table('kunjungan')
         ->leftjoin('pengunjung', 'kunjungan.id_pengunjung', '=', 'pengunjung.id_pengunjung')
         ->select('id_kunjungan', 'nama_pengunjung', 'tanggal_kunjungan')
+        ->where('tujuan_kunjungan', '=', 'Poli Umum')
         ->where('status_penanganan', '=' ,'Sudah')->get();
-        return view('poli-umum.mengelola_kunjungan.index', ['pengunjung' => $kunjungan]);
+
+        $penanganan = DB::table('kunjungan')
+        ->leftjoin('pengunjung', 'kunjungan.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+        ->select('id_kunjungan', 'nama_pengunjung', 'tanggal_kunjungan')
+        ->where('tujuan_kunjungan', '=', 'Poli Umum')
+        ->where('status_penanganan', '=' ,'Belum')->get();
+        return view('poli-umum.mengelola_kunjungan.index', ['pengunjung' => $kunjungan, 'penanganan'=> $penanganan]);
+    }
+
+    public function add_rekammedis($id_kunjungan){
+        $penanganan = DB::table('kunjungan')
+        ->leftJoin('pengunjung', 'kunjungan.id_pengunjung', '=', 'pengunjung.id_pengunjung')
+        ->select('id_kunjungan', 'nama_pengunjung')
+        ->where('tujuan_kunjungan', '=', 'Poli Umum')
+        ->first();
+        return view('poli-umum.mengelola_kunjungan.update', ['penanganan' => $penanganan]);
     }
 }
