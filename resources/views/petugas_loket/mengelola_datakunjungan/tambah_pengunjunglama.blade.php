@@ -2,7 +2,7 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h2>Input Kunjungan Pengunjung Lama</h2>
+        <h2>Input Kunjungan Pasien Lama</h2>
     </div>
     {{-- FORM ADD DATA KUNJUNGAN PENGUNJUNG LAMA --}}
     <form action="{{route('insert_kunjunganPengunjungLama', ['id_pengunjung'=>$data_pengunjung->id_pengunjung])}}" method="POST">
@@ -18,16 +18,15 @@
             </div>
             <div class="form-group">
                 <label for="inputJeniKelamin">Jenis Kelamin</label>
-                <select id="inputJenisKelamin" type="text" name="jenis_kelamin" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas" disabled>
+                <select id="inputJenisKelamin" type="text" name="jenis_kelamin" class="form-control" required placeholder="Asal Kecamatan Pasien Sesuai kartu Identitas" disabled>
                     <option value="{{$data_pengunjung->jenis_kelamin}}">{{$data_pengunjung->jenis_kelamin}}</option>
                     <option value="laki-laki">Laki-laki</option>
                     <option value="perempuan">Perempuan</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="selectAsuransi">Asuransi Pengunjung</label>
-                <select id="selectAsuransi" name="asuransi" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas" disabled>
-                    <option value="{{$data_pengunjung->asuransi}}">{{$data_pengunjung->asuransi}}</option>
+                <label for="selectAsuransi">Asuransi Pasien</label>
+                <select id="selectAsuransi" name="asuransi" class="form-control" required placeholder="Asal Kecamatan Pasien Sesuai kartu Identitas">
                     <option value="BPJS">BPJS/KIS</option>
                     <option value="AsuranSI Lainnya">Asuransi Lainnya</option>
                     <option value="Reguler">Reguler</option>

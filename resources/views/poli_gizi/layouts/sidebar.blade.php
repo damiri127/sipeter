@@ -8,8 +8,8 @@
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
-                            Petugas Loket
-                            <span class="user-level">Petugas Loket</span>
+                            POLI GIZI
+                            <span class="user-level">POLI GIZI</span>
                             <span class="caret"></span>
                         </span>
                     </a>
@@ -26,13 +26,13 @@
                 </div>
             </div>
             <ul class="nav nav-primary">
-                @if (Route::currentRouteName()=='dashboard_petugasloket')
+                @if (Route::currentRouteName()=='dashboard_poligizi')
                     {{$dashboard_status = 'active'}}
                 @else
                     {{$dashboard_status = 'inactive'}}
                 @endif
                 <li class="nav-item {{$dashboard_status}}">
-                    <a  href="{{route('dashboard_petugasloket')}}" aria-expanded="false">
+                    <a  href="{{route('dashboard_poligizi')}}" aria-expanded="false">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>
@@ -43,22 +43,22 @@
                     </span>
                     <h4 class="text-section">Data Kunjungan</h4>
                 </li>
-                @if (Route::currentRouteName()=='data_kunjungan' || Route::currentRouteName()=='add_datakunjungan')
+                @if (Route::currentRouteName()=='data_kunjunganpoligizi')
                 <li class="nav-item active">
                 @else
                 <li class="nav-item ">
                 @endif
-                    <a href="{{route('data_kunjungan')}}">
+                    <a href="{{route('data_kunjunganpoligizi')}}">
                         <i class="fas fa-user"></i>
                         <p>Data Kunjungan Pasien</p>
                     </a>
                 </li>
-                @if (Route::currentRouteName()=='index_arsippengunjung')
+                {{-- @if (Route::currentRouteName()=='index_arsippengunjung')
                 <li class="nav-item active">
-                @else
+                @else --}}
                 <li class="nav-item ">
-                @endif
-                    <a href="{{route('index_arsippengunjung')}}">
+                {{-- @endif --}}
+                    <a href="#">
                         <i class="flaticon-archive"></i>
                         <p>Arsip Data Pasien</p>
                     </a>

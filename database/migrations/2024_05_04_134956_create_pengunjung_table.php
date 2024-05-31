@@ -23,7 +23,6 @@ return new class extends Migration
             $table->string('nomor_telepon');
             $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
             $table->enum('status_menikah', ['Sudah Menikah', 'Belum Menikah']);
-            $table->enum('asuransi', ['BPJS', 'Asuransi Lainnya', 'Reguler']);
             $table->string('nama_wali');
             $table->string('nomor_teleponwali');
             $table->string('asal_kecamatanwali');

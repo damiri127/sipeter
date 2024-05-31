@@ -58,15 +58,6 @@
                                 <option value="Belum Menikah">Belum Menikah</option>
                             </select>
                         </div>
-                        <div class="form-group" id="asuransi">
-                            <label for="selectAsuransi">Asuransi Pengunjung</label>
-                            <select id="selectAsuransi" name="asuransi" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
-                                <option value="{{$pengunjung->asuransi}}">{{$pengunjung->asuransi}}</option>
-                                <option value="BPJS">BPJS/KIS</option>
-                                <option value="AsuranSI Lainnya">Asuransi Lainnya</option>
-                                <option value="Reguler">Reguler</option>
-                            </select>
-                        </div>
                     </div>
                     {{-- DATA WALI PENGUNJUNG --}}
                     <div class="data-wali">

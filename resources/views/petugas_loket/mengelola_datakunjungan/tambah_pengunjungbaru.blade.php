@@ -3,14 +3,14 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-header">
-                <h2>Registrasi Pengunjung Baru</h2>
+                <h2>Registrasi Pasien Baru</h2>
             </div>
             <form action="{{route('insert_datakunjungan')}}" method="POST">
                 @csrf
                 <div class="card-body" id="form-input">
                     <div class="form-group">
                         <label for="inpukNIK">Nomor NIK </label>
-                        <input id="inputNama" type="number" name="NIK" class="form-control" maxlength="16" required placeholder="16 Digit Angka NIK">
+                        <input id="inputNama" type="number" name="NIK" class="form-control" maxlength="16" required placeholder="16 Digit Angka NIK" value="{{request('NIK')}}">
                     </div>
                     <div class="form-group">
                         <label for="inpukNama">Nama</label>
@@ -22,44 +22,36 @@
                     </div>
                     <div class="form-group">
                         <label for="inputJeniKelamin">Jenis Kelamin</label>
-                        <select id="inputJenisKelamin" type="text" name="jenis_kelamin" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
+                        <select id="inputJenisKelamin" type="text" name="jenis_kelamin" class="form-control" required placeholder="Asal Kecamatan Pasien Sesuai kartu Identitas">
                             <option value="laki-laki">Laki-laki</option>
                             <option value="perempuan">Perempuan</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="inputTanggalLahir">Tanggal Lahir</label>
-                        <input id="inputTanggalLahir" type="date" name="tanggal_lahir" class="form-control" required placeholder="Tanggal Lahir Pengunjung Sesuai kartu Identitas">
+                        <input id="inputTanggalLahir" type="date" name="tanggal_lahir" class="form-control" required placeholder="Tanggal Lahir Pasien Sesuai kartu Identitas">
                     </div>
                     <div class="form-group">
                         <label for="inputTempatLahir">Tempat Lahir</label>
-                        <input id="inputTempatLahir" type="text" name="tempat_lahir" class="form-control" required placeholder="Tempat Lahir Pengunjung Sesuai kartu Identitas">
+                        <input id="inputTempatLahir" type="text" name="tempat_lahir" class="form-control" required placeholder="Tempat Lahir Pasien Sesuai kartu Identitas">
                     </div>
                     <div class="form-group">
                         <label for="inputKecamatan">Asal Kecamatan</label>
-                        <input id="inputKecamatan" type="text" name="asal_kecamatan" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
+                        <input id="inputKecamatan" type="text" name="asal_kecamatan" class="form-control" required placeholder="Asal Kecamatan Pasien Sesuai kartu Identitas">
                     </div>
                     <div class="form-group">
                         <label for="inputDesa">Asal Desa</label>
-                        <input id="inputDesa" type="text" name="asal_desa" class="form-control" required placeholder="Asal Desa Pengunjung Sesuai kartu Identitas">
+                        <input id="inputDesa" type="text" name="asal_desa" class="form-control" required placeholder="Asal Desa Pasien Sesuai kartu Identitas">
                     </div>
                     <div class="form-group">
                         <label for="inputAlamatLengkap">Alamat Lengkap</label>
-                        <input id="inputAlamatLengkap" type="text" name="alamat_lengkap" class="form-control" required placeholder="Alamat Lengkap Pengunjung Sesuai kartu Identitas">
+                        <input id="inputAlamatLengkap" type="text" name="alamat_lengkap" class="form-control" required placeholder="Alamat Lengkap Pasien Sesuai kartu Identitas">
                     </div>
                     <div class="form-group">
                         <label for="selectStatusPernikahan">Status Pernikahan</label>
-                        <select id="selectStatusPernikahan" name="status_menikah" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
+                        <select id="selectStatusPernikahan" name="status_menikah" class="form-control" required placeholder="Asal Kecamatan Pasien Sesuai kartu Identitas">
                             <option value="Sudah Menikah">Sudah Menikah</option>
                             <option value="Belum Menikah">Belum Menikah</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="selectAsuransi">Asuransi Pengunjung</label>
-                        <select id="selectAsuransi" name="asuransi" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas">
-                            <option value="BPJS">BPJS/KIS</option>
-                            <option value="AsuranSI Lainnya">Asuransi Lainnya</option>
-                            <option value="Reguler">Reguler</option>
                         </select>
                     </div>
                     {{-- DATA WALI PASIEN --}}
@@ -84,7 +76,15 @@
                         <input id="inputAlamatLengkapWali" type="text" name="alamat_lengkapwali" class="form-control" required placeholder="Alamat Lengkap Wali Sesuai kartu Identitas">
                     </div>
 
-                    {{-- TUJUAN KUNJUNGAN PASIEN --}}
+                    {{-- DATA KUNJUNGAN PASIEN --}}
+                    <div class="form-group">
+                        <label for="selectAsuransi">Asuransi</label>
+                        <select id="selectAsuransi" name="asuransi" class="form-control" required placeholder="Jenis Asuransi Pasien Sesuai kartu Identitas">
+                            <option value="BPJS">BPJS/KIS</option>
+                            <option value="AsuranSI Lainnya">Asuransi Lainnya</option>
+                            <option value="Reguler">Reguler</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label for="selectTujuanKunjungan">Tujuan Kunjungan</label>
                         <select id="selectTujuanKunjungan" name="tujuan_kunjungan" class="form-control" required placeholder="Pilih Tujuan Kunjungan">

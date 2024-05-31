@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PoliUmum\PoliUmumController;
 use App\Http\Controllers\PetugasLoket\PetugasLoketController;
 use App\Http\Controllers\PetugasLoket\ArsipPengunjungController;
+use App\Http\Controllers\PoliGizi\PoliGiziController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:kepala-puskesmas']], function()
 Route::group(['middleware' => ['auth', 'ceklevel:admin,petugas-loket']], function(){
     Route::get('/petugas_loket', [PetugasLoketController::class, 'index'])->name('dashboard_petugasloket');
     Route::get('/petugas_loket/datakunjungan', [PetugasLoketController::class, 'data_kunjungan'])->name('data_kunjungan');
-    Route::get('/petugas_loket/datakunjungan/inputkunjunganbaru', [PetugasLoketController::class,'add_datakunjungan'])->name('add_datakunjungan');
+    Route::get('/petugas_loket/datakunjungan/inputkunjunganbaru/{NIK}', [PetugasLoketController::class,'add_datakunjungan'])->name('add_datakunjungan');
     Route::post('/petugas_loket/datakunjungan/insertkunjunganbaru', [PetugasLoketController::class,'insert_datapengunjung'])->name('insert_datakunjungan');
     Route::get('/petugas_loket/datakunjungan/editDataKunjungan/{id_kunjungan}', [PetugasLoketController::class,'edit_datakunjungan'])->name('edit_datakunjungan');
     Route::post('/petugas_loket/datakunjungan/updateKunjungan/{id_kunjungan}', [PetugasLoketController::class,'update_datakunjungan'])->name('update_datakunjungan');
@@ -49,7 +50,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,petugas-loket']], functio
 
     Route::get('/petugas_loket/arsip-pengunjunng',[ArsipPengunjungController::class, 'index'])->name('index_arsippengunjung');
     Route::get('/petugas_loket/arsip-pengunjunng/add_datapengunjung',[ArsipPengunjungController::class, 'add_datapengunjung'])->name('add_datapengunjung');
-    Route::post('/petugas_loket/arsip-pengunjunng/insert_datakunjungan',[ArsipPengunjungController::class, 'insert_datapengunjung'])->name('insert_datakunjungan');
+    Route::post('/petugas_loket/arsip-pengunjunng/insert_datakunjungan',[ArsipPengunjungController::class, 'insert_datapengunjung'])->name('insert_datakunjunganarsip');
     Route::get('/petugas_loket/arsip-pengunjung/edit_data/{id_pengunjung}',[ArsipPengunjungController::class, 'edit_datapengunjung'])->name('edit_datapengunjung');
     Route::post('/petugas_loket/arsip-pengunjung/update_data/{id_pengunjung}',[ArsipPengunjungController::class, 'update_datapengunjung'])->name('update_datapengunjung');
     Route::get('/petugas_loket/arsip-pengunjung/delete_data/{id_pengunjung}',[ArsipPengunjungController::class, 'delete_datapengunjung'])->name('delete_datapengunjung');
@@ -58,6 +59,12 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,petugas-loket']], functio
 Route::group(['middleware' => ['auth', 'ceklevel:admin,poliumum']], function(){ 
     Route::get('/poliumum', [PoliUmumController::class, 'index'])->name('dashboard_poliumum');
     Route::get('/poliumum/datakunjungan', [PoliUmumController::class, 'data_poli'])->name('data_poliumum');
+});
+
+Route::group(['middleware' => ['auth', 'ceklevel:admin,poligizi']], function(){ 
+    Route::get('/poligizi', [PoliGiziController::class, 'index'])->name('dashboard_poligizi');
+    Route::get('/poligizi/data_kunjunganpasien', [PoliGiziController::class, 'data_kunjungan'])->name('data_kunjunganpoligizi');
+    // Route::get('/poliumum/datakunjungan', [PoliUmumController::class, 'data_poli'])->name('data_poliumum');
 });
 
 

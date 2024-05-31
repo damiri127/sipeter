@@ -1,26 +1,19 @@
 @extends('petugas_loket.layouts.layout')
 @section('content')
     <div class="container-fluid">
-        
-        {{-- Card Input Pengunjung Lama --}}
-        <div class="card" id="card-input-pengunjung-lama">
-            {{-- Button Add Pengunjung Baru --}}
+        {{-- Card Input Pasien Lama --}}
+        <div class="card" id="card-input-Pasien-lama">
             <div class="card-header">
-                <div class="d-flex justify-content-between">
-                    <div class="d-inline-flex p-2">
-                        <h2>Pendaftaran Pasien</h2>
-                    </div>
-                    <h1><a href="{{route('add_datakunjungan')}}" class="btn btn-sm btn-primary">Tambah Pengunjung Baru</a></h1>
-                </div>
+                <h2 class="tittle">Pendaftaran Pasien</h2>
             </div>
-            {{-- Form Input Validation Pengunjung Lama --}}
+            {{-- Form Input Validation Pasien Lama --}}
             <div class="card-body">
                 <div class="container">
                     <form action="{{route('validation_pengunjunglama')}}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="inpukNIK">NIK Pengunjung Lama</label>
-                            <input id="inputNama" type="number" name="NIK" class="form-control" maxlength="16" required placeholder="16 Digit Angka NIK Pengunjung">
+                            <label for="inpukNIK">NIK Pasien</label>
+                            <input id="inputNama" type="number" name="NIK" class="form-control" maxlength="16" required placeholder="16 Digit Angka NIK Pasien">
                             <button class="btn btn-primary mt-3" type="submit">Cari</button>
                         </div>
                     </form>
@@ -31,7 +24,7 @@
         {{-- Card List Data Kunjungan Puskesmas --}}
         <div class="card" id="card-informasi-kunjungan">
             <div class="card-header">
-                <h2>Data Pengunjung</h2>
+                <h2>Data Pasien</h2>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

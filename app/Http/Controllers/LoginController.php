@@ -31,10 +31,14 @@ class LoginController extends Controller
                 return redirect()->intended('petugas_loket');
             } else if(auth()->user()->level == "poliumum"){
                 return redirect()->intended('poliumum');
+            } else if(auth()->user()->level == "poligizi"){
+                return redirect()->intended('poligizi');
             }
 
             return back()->withErrors('Error');
         }
+
+        return redirect(route('login'))->with('error', 'Username dan Password yang anda masukan salah');
 
     }
     public function logout()

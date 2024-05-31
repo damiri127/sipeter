@@ -62,7 +62,6 @@ class PetugasLoketController extends Controller
             $pengunjung->nomor_telepon = $request->nomor_telepon;
             $pengunjung->jenis_kelamin = $request->jenis_kelamin;
             $pengunjung->status_menikah = $request->status_menikah;
-            $pengunjung->asuransi = $request->asuransi;
             $pengunjung->nama_wali = $request->nama_wali;
             $pengunjung->nomor_teleponwali = $request->nomor_teleponwali;
             $pengunjung->asal_kecamatanwali = $request->asal_kecamatanwali;
@@ -74,6 +73,7 @@ class PetugasLoketController extends Controller
             $kunjungan = new Kunjungan;
             $kunjungan->id_pengunjung = $findPengunjung->id_pengunjung;
             $kunjungan->tujuan_kunjungan = $request->tujuan_kunjungan;
+            $kunjungan->asuransi = $request->asuransi;
             $kunjungan->status_penanganan = "Belum";
             $kunjungan->save();
 
@@ -112,9 +112,13 @@ class PetugasLoketController extends Controller
     }
 
     public function validation_pengunjunglama(Request $request){
-        $dataPengunjungLama = Pengunjung::where('NIK',$request->NIK)->first();
+        $nik = $request->NIK;
+        $dataPengunjungLama = Pengunjung::where('NIK',$nik)->first();
         if($dataPengunjungLama == null){
-            return redirect(route('data_kunjungan'))->with('error', 'Data Pengunjung Lama Tidak Ditemukan');
+            
+            return redirect(route('add_datakunjungan', ["NIK"=>$nik]))->with('error', 'Data Pengunjung Lama Tidak Ditemukan');
+            //return view('petugas_loket.mengelola_datakunjungan.tambah_pengunjungbaru', ['NIK'=>$request->NIK])->with('error','Data Pengunjung Lama Tidak Ditemukan');
+            //return redirect(route('data_kunjungan'))->with('error', 'Data Pengunjung Lama Tidak Ditemukan');
         }
         //dd($dataPengunjungLama);
         return view('petugas_loket.mengelola_datakunjungan.tambah_pengunjunglama', ['data_pengunjung'=>$dataPengunjungLama]);
@@ -126,6 +130,7 @@ class PetugasLoketController extends Controller
         $dataKunjungan->id_pengunjung = $id_pengunjung;
         $dataKunjungan->tujuan_kunjungan = $request->tujuan_kunjungan;
         $dataKunjungan->status_penanganan = "Belum";
+        $dataKunjungan->asuransi = $request->asuransi;
         $dataKunjungan->save();
 
         return redirect(route('data_kunjungan'))->with('success', 'Data Kunjungan Berhasil Dimasukan');

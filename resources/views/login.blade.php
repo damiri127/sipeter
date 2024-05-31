@@ -8,6 +8,14 @@
     <title>Login | Sipeter</title>
 </head>
 <body>
+  <div id="ResponseFailed">
+    @if (session('error'))
+        <div class="alert alert-danger">
+          {{session('error')}}
+        </div>
+    @endif
+    <div></div>
+  </div>
     <form action="\login" method="post" class="signin-form">
         @csrf
         {{-- <div class="imgcontainer">

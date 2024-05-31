@@ -51,11 +51,11 @@
 			</div>
 			<!-- End Logo Header -->
 
-			@include('petugas_loket.layouts.navbar')
+			@include('poli_gizi.layouts.navbar')
 		</div>
 
 		<!-- Sidebar -->
-		@include('petugas_loket.layouts.sidebar')
+		@include('poli_gizi.layouts.sidebar')
 		<!-- End Sidebar -->
 
 		<!-- Main content -->

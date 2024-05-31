@@ -71,7 +71,7 @@
                                         </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                          <a href="#" class="btn btn-primary">Edit Data</a>
+                                          <a href="{{route('edit_datapengunjung', ['id_pengunjung'=>$item->id_pengunjung])}}" class="btn btn-primary">Edit Data</a>
                                         </div>
                                       </div>
                                     </div>

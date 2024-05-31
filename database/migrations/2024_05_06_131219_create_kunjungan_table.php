@@ -25,6 +25,7 @@ return new class extends Migration
             ]);
             $table->enum('status_penanganan', ["Sudah", "Belum"]);
             $table->dateTime('tanggal_kunjungan');
+            $table->enum('asuransi', ['BPJS', 'Asuransi Lainnya', 'Reguler']);
             $table->timestamps();
         });
     }

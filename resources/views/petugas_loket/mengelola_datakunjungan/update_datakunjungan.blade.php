@@ -2,27 +2,19 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h2>Edit Data Kunjungan Puskesmas</h2>
+        <h2>Edit Data Kunjungan Pasien</h2>
     </div>
     <form action="/petugas_loket/datakunjungan/updateKunjungan/{{$data_kunjungan->id_kunjungan}}" method="POST">
         @csrf
         <div class="card-body" id="form-input">
             <div class="form-group">
-                <label for="inpukNIK">Nomor NIK </label>
-                <input id="inputNama" type="number" name="NIK" class="form-control" maxlength="16" required placeholder="16 Digit Angka NIK" value="{{$data_kunjungan->data_pengunjung->NIK}}" disabled>
-            </div>
-            <div class="form-group">
                 <label for="inpukNama">Nama</label>
                 <input id="inputNama" type="text" name="nama_pengunjung" class="form-control" required placeholder="Masukan Nama sesuai Kartu Identitas" value="{{$data_kunjungan->data_pengunjung->nama_pengunjung}}" disabled>
             </div>
             <div class="form-group">
-                <label for="editTanggalKunjungan">Tanggal Kunjungan</label>
-                <input type="datetime" name="tanggal_kunjungan" id="editTanggalKunjungan" class="form-control" value="{{$data_kunjungan->tanggal_kunjungan}}" disabled>
-            </div>
-            <div class="form-group">
-                <label for="selectAsuransi">Asuransi Pengunjung</label>
-                <select id="selectAsuransi" name="asuransi" class="form-control" required placeholder="Asal Kecamatan Pengunjung Sesuai kartu Identitas" disabled>
-                    <option value="{{$data_kunjungan->data_pengunjung->asuransi}}">{{$data_kunjungan->data_pengunjung->asuransi}}</option>
+                <label for="selectAsuransi">Asuransi</label>
+                <select id="selectAsuransi" name="asuransi" class="form-control" required placeholder="Jenis Asuransi Pasien " disabled>
+                    <option value="{{$data_kunjungan->data_pengunjung->asuransi}}">{{$data_kunjungan->asuransi}}</option>
                     <option value="BPJS">BPJS/KIS</option>
                     <option value="AsuranSI Lainnya">Asuransi Lainnya</option>
                     <option value="Reguler">Reguler</option>

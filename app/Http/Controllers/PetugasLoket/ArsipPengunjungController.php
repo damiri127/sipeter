@@ -42,13 +42,20 @@ class ArsipPengunjungController extends Controller
         $pengunjung->nomor_telepon = $request->nomor_telepon;
         $pengunjung->jenis_kelamin = $request->jenis_kelamin;
         $pengunjung->status_menikah = $request->status_menikah;
-        $pengunjung->asuransi = $request->asuransi;
         $pengunjung->nama_wali = $request->nama_wali;
         $pengunjung->nomor_teleponwali = $request->nomor_teleponwali;
         $pengunjung->asal_kecamatanwali = $request->asal_kecamatanwali;
         $pengunjung->asal_desawali = $request->asal_desawali;
         $pengunjung->alamat_lengkapwali = $request->alamat_lengkapwali;
         $pengunjung->save();
+
+        $findPengunjung = Pengunjung::where('NIK', $request->NIK)->first();
+        $kunjungan = new Kunjungan;
+        $kunjungan->id_pengunjung = $findPengunjung->id_pengunjung;
+        $kunjungan->tujuan_kunjungan = $request->tujuan_kunjungan;
+        $kunjungan->asuransi = $request->asuransi;
+        $kunjungan->status_penanganan = "Belum";
+        $kunjungan->save();
 
         return redirect(route('index_arsippengunjung'))->with('success', 'Data Pengunjung Berhasil Diinputkan');
     
