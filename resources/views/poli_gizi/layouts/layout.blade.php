@@ -25,7 +25,7 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="{{asset("layout_asset/examples/assets/css/demo.css")}}">
 	{{-- JAVASCRIPT --}}
-	@include('petugas_loket.layouts.javascript')
+	@include('poli_gizi.layouts.javascript')
 </head>
 <body>
 	<div class="wrapper">

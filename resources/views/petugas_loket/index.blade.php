@@ -10,7 +10,6 @@
         </div>
     </div>
 </div>
-
 <div class="page-inner mt--5">
     <div class="card">
         <div class="card-header">
@@ -25,8 +24,6 @@
         </div>
     </div>
 </div>
-
-
 <script>
     var dataKunjungan = @json($data);
     var lineChart = document.getElementById('LineChart').getContext('2d');
@@ -77,5 +74,4 @@
 </script>
 @endsection
 @section('content')
-
 @endsection

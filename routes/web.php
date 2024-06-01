@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\ICDX\ICDXController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
@@ -65,6 +66,10 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,poliumum']], function(){
 Route::group(['middleware' => ['auth', 'ceklevel:admin,poligizi']], function(){ 
     Route::get('/poligizi', [PoliGiziController::class, 'index'])->name('dashboard_poligizi');
     Route::get('/poligizi/data_kunjunganpasien', [PoliGiziController::class, 'data_kunjungan'])->name('data_kunjunganpoligizi');
+    Route::get('/poligizi/data_kunjunganpasien/{id_kunjungan}', [PoliGiziController::class, 'add_rekammedis'])->name('add_rekammedispoligizi');
+    Route::get('/poligizi/search-icdx', [ICDXController::class, 'search_icdx'])->name('search_icdx');
+    
+    
     // Route::get('/poliumum/datakunjungan', [PoliUmumController::class, 'data_poli'])->name('data_poliumum');
 });
 

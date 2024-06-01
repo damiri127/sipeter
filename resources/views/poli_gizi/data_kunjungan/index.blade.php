@@ -28,7 +28,7 @@
                                         <td> {{$loop->iteration}} </td>
                                         <td> {{$item->data_pengunjung->nama_pengunjung}}</td>
                                         <td>
-                                            <a href="#" class="btn btn-sm btn-primary">Tangani</a>
+                                            <a href="{{route('add_rekammedispoligizi', ['id_kunjungan'=>$item->id_kunjungan])}}" class="btn btn-sm btn-primary">Tangani</a>
                                             <a href="#" class="btn btn-sm btn-danger">Hapus Pasien</a>
                                         </td>
                                     </tr>

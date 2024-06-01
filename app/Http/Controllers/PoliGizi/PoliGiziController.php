@@ -19,5 +19,10 @@ class PoliGiziController extends Controller
         return view('poli_gizi.data_kunjungan.index', ['kunjungan_sudahditangani'=>$kunjungan_sudahditangani, 'kunjungan_belumditangani'=>$kunjungan_belumditangani]);
     }
 
+    public function add_rekammedis($id_kunjungan){
+        $data_pasien = Kunjungan::find($id_kunjungan);
+        return view('poli_gizi.data_kunjungan.add_rekammedispasien', ['pasien'=>$data_pasien]);
+    }
+
     
 }
