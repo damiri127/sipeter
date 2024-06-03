@@ -12,5 +12,9 @@ class Pengunjung extends Model
     protected $table = 'pengunjung';
 
     protected $primaryKey = 'id_pengunjung';
+
+    public function kunjungan(){
+        return $this->hasMany(Kunjungan::class, 'id_pengunjung');
+    }
     
 }

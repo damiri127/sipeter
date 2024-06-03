@@ -56,12 +56,32 @@
                 {{-- @if (Route::currentRouteName()=='index_arsippengunjung')
                 <li class="nav-item active">
                 @else --}}
-                <li class="nav-item ">
+                <li class="nav-item">
                 {{-- @endif --}}
-                    <a href="#">
+                    <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
                         <i class="flaticon-archive"></i>
                         <p>Arsip Data Pasien</p>
+                        <span class="caret"></span>
                     </a>
+                    <div class="collapse" id="dashboard">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="#">
+                                    <span class="sub-item">Data Pemeriksaan</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="sub-item">Data Imunisasi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="sub-item">Data Konseling</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
         </div>
