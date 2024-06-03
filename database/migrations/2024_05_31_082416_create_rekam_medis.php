@@ -15,13 +15,13 @@ return new class extends Migration
             $table->id('id_rekam_medis')->autoIncrement();
             $table->unsignedBigInteger('id_kunjungan');
             $table->foreign('id_kunjungan')->references('id_kunjungan')->on('kunjungan')->onDelete('restrict');
-            $table->foreignId('id_icd')->references('id_icd')->on('icd');
             $table->string('anamnesa');
             $table->integer('berat_badan');
             $table->integer('tinggi_badan');
-            $table->string('diastolik');
             $table->string('sistolik');
-            $table->string('Diagnosa');
+            $table->string('diastolik');
+            $table->foreignId('diagnosa')->references('id_icd')->on('icd');
+            $table->enum('status_rujukan', ['rujukan internal', 'rujukan eksternal', 'tidak perlu']);
             $table->timestamps();
         });
     }

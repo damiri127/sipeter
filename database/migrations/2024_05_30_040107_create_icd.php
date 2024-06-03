@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id('id_icd')->autoIncrement();
             $table->string('kode_icd');
             $table->string('nama_penyakit');
-            $table->timestamps();
         });
     }
 

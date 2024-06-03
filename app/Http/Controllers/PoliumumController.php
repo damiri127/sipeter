@@ -1,20 +1,27 @@
 <?php
 
-namespace App\Http\Controllers\PoliUmum;
+namespace App\Http\Controllers;
 
+use App\Models\Kunjungan;
 use App\Models\RekamMedis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use App\Models\Kunjungan;
 
-class PoliUmumController extends Controller
+class PoliumumController extends Controller
 {
-    public function index(){
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
         return view('poli-umum.layouts.layout');
     }
 
-    public function data_poli(){
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
         $kunjungan = DB::table('kunjungan')
         ->leftjoin('pengunjung', 'kunjungan.id_pengunjung', '=', 'pengunjung.id_pengunjung')
         ->select('id_kunjungan', 'nama_pengunjung', 'tanggal_kunjungan')
@@ -29,16 +36,11 @@ class PoliUmumController extends Controller
         return view('poli-umum.mengelola_kunjungan.index', ['pengunjung' => $kunjungan, 'penanganan'=> $penanganan]);
     }
 
-    public function add_rekammedis(){
-        $pasien = DB::table('kunjungan')
-        ->leftjoin('pengunjung', 'kunjungan.id_pengunjung', '=', 'pengunjung.id_pengunjung')
-        ->select('id_kunjungan', 'nama_pengunjung', 'tanggal_kunjungan', 'tanggal_lahir')
-        ->where('tujuan_kunjungan', '=' , "Poli Umum")
-        ->first();
-        return view('poli-umum.mengelola_kunjungan.update', ['pasien' => $pasien]);
-    }
-
-    public function update_rekammedis(Request $request, $id_kunjungan){
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request, $id_kunjungan)
+    {
         $rekammedis = new RekamMedis;
         $rekammedis->id_kunjungan = $request->id_kunjungan;
         $rekammedis->anamnesa = $request->anamnesa;
@@ -53,5 +55,37 @@ class PoliUmumController extends Controller
         $updateStatus = Kunjungan::find($id_kunjungan);
         $updateStatus->status_kunjungan = "Sudah";
         $updateStatus->update();
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(RekamMedis $rekamMedis)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(RekamMedis $rekamMedis)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, RekamMedis $rekamMedis)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(RekamMedis $rekamMedis)
+    {
+        //
     }
 }

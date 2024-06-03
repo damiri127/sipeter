@@ -30,7 +30,10 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->tanggal_kunjungan }}</td>
                                     <td>{{ $data->nama_pengunjung }}</td>
-                                    <td><a href="/poliumum/datakunjungan/update/{{ $data->id_kunjungan }}" class="btn btn-md btn-primary">Tangani Pasien</a></td>
+                                    <td>
+                                        <a href="/poliumum/datakunjungan/update/{{ $data->id_kunjungan }}" class="btn btn-sm btn-primary">Tangani Pasien</a>
+                                        <a href="#" class="btn btn-sm btn-danger">Hapus</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
