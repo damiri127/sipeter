@@ -1,14 +1,15 @@
 <?php
 
 
-use App\Http\Controllers\ICDX\ICDXController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ICDX\ICDXController;
+use App\Http\Controllers\PoliGizi\PoliGiziController;
 use App\Http\Controllers\PoliUmum\PoliUmumController;
 use App\Http\Controllers\PetugasLoket\PetugasLoketController;
 use App\Http\Controllers\PetugasLoket\ArsipPengunjungController;
-use App\Http\Controllers\PoliGizi\PoliGiziController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,12 +59,15 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,petugas-loket']], functio
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin,poliumum']], function () {
-    // Route::get('/poliumum', [PoliUmumController::class, 'index'])->name('dashboard_poliumum');
-    // Route::get('/poliumum/datakunjungan', [PoliUmumController::class, 'data_poli'])->name('data_poliumum');
-    // Route::get('/poliumum/datakunjungan/update/{id_kunjungan}', [PoliUmumController::class, 'add_rekammedis'])->name('add_rekammedis');
-    // Route::get('/poliumum/search-icdx', [ICDXController::class, 'search_icdx'])->name('search_icdx');
-    // Route::get('/poliumum/datakunjungan/edit/{id_kunjungan}', [PoliUmumController::class, 'update_rekammedis']);
-    Route::resource('/poliumum', PoliumumController::class);
+    Route::get('/poliumum', [PoliUmumController::class, 'index'])->name('dashboard_poliumum');
+    Route::get('/poliumum/datakunjungan', [PoliUmumController::class, 'data_poli'])->name('data_poliumum');
+    Route::get('/poliumum/datakunjungan/update/{id_kunjungan}', [PoliUmumController::class, 'add_rekammedis'])->name('add_rekammedis');
+    Route::get('/poliumum/search-icdx', [ICDXController::class, 'search_icdx'])->name('search_icdx');
+    Route::post('/poliumum/datakunjungan/store/{id_kunjungan}', [PoliUmumController::class, 'store_rekammedis'])->name('insert_rekammedis');
+    Route::get('/poliumum/datakunjungan/edit/{id_kunjungan}', [PoliUmumController::class, 'update_rekammedis'])->name('ubah_rekammedis');
+    Route::post('/poliumum/datakunjungan/ubah/{id_rekam_medis}', [PoliUmumController::class, 'edit_rekammedis'])->name('perbarui_rekammedis');
+    Route::get('/poliumum/datakunjungan/delete/{id_kunjungan}', [PoliUmumController::class, 'delete_kunjungan'])->name('destroy_kunjungan');
+    //Route::resource('/poliumum', PoliumumController::class);
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:admin,poligizi']], function(){ 
