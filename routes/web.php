@@ -68,6 +68,18 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,poligizi']], function(){
     Route::get('/poligizi/data_kunjunganpasien', [PoliGiziController::class, 'data_kunjungan'])->name('data_kunjunganpoligizi');
     Route::get('/poligizi/data_kunjunganpasien/{id_kunjungan}', [PoliGiziController::class, 'add_rekammedis'])->name('add_rekammedispoligizi');
     Route::get('/poligizi/search-icdx', [ICDXController::class, 'search_icdx'])->name('search_icdx');
+    Route::post('/poligizi/store_rekammedispoligizi/{id_kunjungan}',[PoliGiziController::class, 'store_rekammedis'])->name('store_rekammedis');
+    Route::get('/poligizi/edit_rekammedispoligizi/{id_rekam_medis_poligizi}',[PoliGiziController::class, 'edit_rekammedis'])->name('edit_rekammedis');
+    Route::post('/poligizi/update_rekammedis/{id_rekam_medis_poligizi}',[PoliGiziController::class, 'update_rekammedis'])->name('update_rekammedis');
+    Route::get('/poligizi/delete/{id_kunjungan}',[PoliGiziController::class, 'delete_kunjunganpasien'])->name('delete_kunjunganpasien');
+    
+
+    
+    
+    
+
+    
+    
     
     
     // Route::get('/poliumum/datakunjungan', [PoliUmumController::class, 'data_poli'])->name('data_poliumum');
@@ -77,9 +89,31 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin,poligizi']], function(){
 //Route Login
 
 Route::get('/login', function () {
-    return view('login');
+    return view('login_template');
 })->name('login');
 
-Route::post('/login', [LoginController::class, 'authentication']);
+Route::get('/', function () {
+    if(Auth::check()){
+        if(auth()->user()->level=="admin"){
+            return redirect(route('admin'));
+        }
+        if(auth()->user()->level=="petugas-loket"){
+            return redirect(route('dashboard_petugasloket'));
+        }
+        if(auth()->user()->level=="poliumum"){
+            return redirect(route('dashboard_poliumum'));
+        }
+        if(auth()->user()->level=="poligizi"){
+            return redirect(route('dashboard_poligizi'));
+        }
+    }
+    return redirect(route('login'));
+});
+
+Route::get('/login-test', function () {
+    return view('login_template');
+})->name('login_test');
+
+Route::post('/login', [LoginController::class, 'authentication'])->name('post_login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
