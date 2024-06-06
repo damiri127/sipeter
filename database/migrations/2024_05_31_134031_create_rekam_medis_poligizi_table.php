@@ -20,8 +20,16 @@ return new class extends Migration
             $table->string('anamnesa');
             $table->integer('berat_badan');
             $table->integer('tinggi_badan');
-            $table->string('diastolik');
-            $table->string('sistolik');
+            $table->integer('ukuran_lila');
+            $table->integer('diastolik');
+            $table->integer('sistolik');
+            $table->enum('kategori_pasien', ['Ibu Hamil', 'Ibu Nifas', 'Balita', 'Umum']);
+            $table->enum('perolehan_tablet_tambah_darah_30fe1', ['Dapat', 'Tidak dapat']);
+            $table->enum('perolehan_tablet_tambah_darah_90fe3', ['Dapat', 'Tidak dapat']);
+            $table->enum('perolehan_sirup_tambah_darah_febal1', ['Dapat', 'Tidak dapat']);
+            $table->enum('perolehan_sirup_tambah_darah_febal2', ['Dapat', 'Tidak dapat']);
+            $table->enum('perolehan_kapsul_yudium', ['Dapat', 'Tidak dapat']);
+            $table->enum('perolehan_vitaminA_dosistinggi', ['Dapat', 'Tidak dapat']);
             $table->enum("status_rujukan",["rujukan internal", "rujukan eksternal", "tidak perlu"]);
             $table->timestamps();
         });

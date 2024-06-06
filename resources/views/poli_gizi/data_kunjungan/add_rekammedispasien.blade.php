@@ -26,6 +26,18 @@
                             <input id="inputNama" type="number" name="nama_pasien" class="form-control" maxlength="16" required placeholder="16 Digit Angka NIK" value="{{Carbon\Carbon::parse($pasien->data_pengunjung->tanggal_lahir)->age}}" disabled>
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="form-group" id="umur_pasien">
+                            <label for="inpukNIK">Kategori Pasien</label>
+                            <select id="kategoriPasien" type="text" name="kategori_pasien" class="form-control" required placeholder="Kategori Pasien">
+                                <option disabled selected value>Pilih Kategori Pasien</option>
+                                <option value="Ibu Hamil">Ibu Hamil</option>
+                                <option value="Ibu Nifas">Ibu Nifas</option>
+                                <option value="Balita">Balita</option>
+                                <option value="Umum">Umum</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col">
@@ -52,12 +64,19 @@
                             <input required id="tekanan_darah" type="number" name="diastolik" class="form-control" maxlength="3" required placeholder="Sistolik pasien">
                         </div>
                     </div>
+                    <div class="col">
+                        <div class="form-group" id="ukuran_lila">
+                            <label  for="ukuran_lila">Ukuran Lila (cm)</label>
+                            <input required id="tekanan_darah" type="number" name="ukuran_lila" class="form-control" maxlength="3" required placeholder="Ukuran Lila pasien">
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group" id="anamnesa">
                     <label for="inpukNIK">Anamnesa</label>
                     <textarea required class="form-control" id="exampleFormControlTextarea1" rows="3" name="anamnesa" placeholder="Rincian keluhan pasien"></textarea>
                 </div>
-                <div class="row">
+
+                <div class="row mt-2" id="diagnosis-pasien">
                     <div class="col">
                         <div class="form-group" id="diagnosis1">
                             <label for="diagnosis1">Diagnosis 1</label>
@@ -73,6 +92,77 @@
                         </div>
                     </div>
                 </div>
+                
+
+                <div class="row mt-2" id="perolehan-obat-tablet-tambah-darah">
+                    <div class="col">
+                        <div class="form-group" id="perolehan_tablet_tambah_darah_30fe1">
+                            <label for="inpukNIK">Perolehan tablet tambah darah 30 Fe1</label>
+                            <select type="text" name="perolehan_tablet_tambah_darah_30fe1" class="form-control" required>
+                                <option disabled selected value>Tentukan perolehan obat</option>
+                                <option value="Dapat">Dapat</option>
+                                <option value="Tidak Dapat">Tidak Dapat</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group" id="perolehan_tablet_tambah_darah_90fe3">
+                            <label for="inpukNIK">Perolehan tablet tambah darah 90 Fe3</label>
+                            <select type="text" name="perolehan_tablet_tambah_darah_90fe3" class="form-control" required>
+                                <option disabled selected value>Tentukan perolehan obat</option>
+                                <option value="Dapat">Dapat</option>
+                                <option value="Tidak Dapat">Tidak Dapat</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2" id="perolehan-obat-sirup-tambah-darah">
+                    <div class="col">
+                        <div class="form-group" id="perolehan_sirup_tambah_darag_febal1">
+                            <label for="inpukNIK">Perolehan Sirup Tambah Darah Febal 1</label>
+                            <select type="text" name="perolehan_sirup_tambah_darah_febal1" class="form-control" required>
+                                <option disabled selected value>Tentukan perolehan obat</option>
+                                <option value="Dapat">Dapat</option>
+                                <option value="Tidak Dapat">Tidak Dapat</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group" id="perolehan_sirup_tambah_darag_febal2">
+                            <label for="inpukNIK">Perolehan Sirup Tambah Darah Febal 2</label>
+                            <select type="text" name="perolehan_sirup_tambah_darah_febal2" class="form-control" required>
+                                <option disabled selected value>Tentukan perolehan obat</option>
+                                <option value="Dapat">Dapat</option>
+                                <option value="Tidak Dapat">Tidak Dapat</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" id="perolehan_obatlainnya">
+                    <div class="col">
+                        <div class="form-group" id="perolehan_kapsul_yudium">
+                            <label for="inpukNIK">Perolehan Kapsul Yudium</label>
+                            <select type="text" name="perolehan_kapsul_yudium" class="form-control" required>
+                                <option disabled selected value>Tentukan perolehan obat</option>
+                                <option value="Dapat">Dapat</option>
+                                <option value="Tidak Dapat">Tidak Dapat</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group" id="perolehan_vitaminA_dosistinggi">
+                            <label for="inpukNIK">Perolehan Vitamin A Dosis Tinggi</label>
+                            <select type="text" name="perolehan_vitaminA_dosistinggi" class="form-control" required>
+                                <option disabled selected value>Tentukan perolehan obat</option>
+                                <option value="Dapat">Dapat</option>
+                                <option value="Tidak Dapat">Tidak Dapat</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group" id="status_rujukan">
                     <label for="inputJeniKelamin">Status Rujukan</label>
                     <select id="inputJenisKelamin" type="text" name="status_rujukan" class="form-control" required placeholder="Status Rujukan Pasien">

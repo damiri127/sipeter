@@ -53,6 +53,14 @@ class PoliGiziController extends Controller
             $rekamMedisPasien->diagnosis_1 = $request->id_diagnosis1; 
             $rekamMedisPasien->diagnosis_2 = $request->id_diagnosis2;
             $rekamMedisPasien->status_rujukan = $request->status_rujukan;
+            $rekamMedisPasien->ukuran_lila = $request->ukuran_lila;
+            $rekamMedisPasien->kategori_pasien = $request->kategori_pasien;
+            $rekamMedisPasien->perolehan_tablet_tambah_darah_30fe1 = $request->perolehan_tablet_tambah_darah_30fe1;
+            $rekamMedisPasien->perolehan_tablet_tambah_darah_90fe3 = $request->perolehan_tablet_tambah_darah_90fe3;
+            $rekamMedisPasien->perolehan_sirup_tambah_darah_febal1 = $request->perolehan_sirup_tambah_darah_febal1;
+            $rekamMedisPasien->perolehan_sirup_tambah_darah_febal2 = $request->perolehan_sirup_tambah_darah_febal2;
+            $rekamMedisPasien->perolehan_kapsul_yudium = $request->perolehan_kapsul_yudium;
+            $rekamMedisPasien->perolehan_vitaminA_dosistinggi = $request->perolehan_vitaminA_dosistinggi;
             
             $rekamMedisPasien->save();
             $pasien->status_penanganan = "Sudah";
