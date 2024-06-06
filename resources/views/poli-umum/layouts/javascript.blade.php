@@ -3,7 +3,8 @@
 <script src="{{asset("layout_asset/examples/assets/js/core/popper.min.js")}}"></script>
 <script src="{{asset("layout_asset/examples/assets/js/core/bootstrap.min.js")}}"></script>
 <!-- jQuery UI -->
-<script src="{{asset("layout_asset/examples/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js")}}"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+{{-- <script src="{{asset("layout_asset/examples/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js")}}"></script> --}}
 <script src="{{asset("layout_asset/examples/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js")}}"></script>
 <!-- jQuery Scrollbar -->
 <script src="{{asset("layout_asset/examples/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js")}}"></script>
@@ -22,6 +23,7 @@
 <script src="{{asset("layout_asset/examples/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js")}}"></script>
 <!-- Sweet Alert -->
 <script src="{{asset("layout_asset/examples/assets/js/plugin/sweetalert/sweetalert.min.js")}}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <!-- Atlantis JS -->
 <script src="{{asset("layout_asset/examples/assets/js/atlantis.min.js")}}"></script>
 
@@ -29,6 +31,8 @@
 <script >
     $(document).ready(function() {
         $('#basic-datatables').DataTable({
+            order:[],
+            lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]] // Menyediakan pilihan untuk jumlah baris per halaman
         });
 
         $('#multi-filter-select').DataTable( {

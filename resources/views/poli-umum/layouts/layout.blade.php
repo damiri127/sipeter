@@ -24,6 +24,8 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="{{asset("layout_asset/examples/assets/css/demo.css")}}">
+	{{-- JAVASCRIPT --}}
+	@include('poli-umum.layouts.javascript')
 </head>
 <body>
 	<div class="wrapper">
@@ -66,10 +68,5 @@
 		</div>
 		<!-- End Main content -->
 	</div>
-
-	
-
-	{{-- JAVASCRIPT --}}
-	@include('poli-umum.layouts.javascript')
 </body>
 </html>

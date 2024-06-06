@@ -43,10 +43,10 @@
                     </span>
                     <h4 class="text-section">Data Kunjungan</h4>
                 </li>
-                @if (Route::currentRouteName()=='data_poliumum')
+                @if (Route::currentRouteName()=='data_poliumum' || Route::currentRouteName()=='add_rekammedis')
                 <li class="nav-item active">
                 @else
-                <li class="nav-item active">
+                <li class="nav-item inactive">
                 @endif
                     <a href="{{ route('data_poliumum') }}">
                         <i class="fas fa-user"></i>
