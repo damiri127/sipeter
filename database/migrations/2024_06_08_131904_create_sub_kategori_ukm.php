@@ -4,8 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubKategoriUkmTable extends Migration
+return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up()
     {
         Schema::create('sub_kategori_ukm', function (Blueprint $table) {
@@ -24,4 +27,4 @@ class CreateSubKategoriUkmTable extends Migration
     {
         Schema::dropIfExists('sub_kategori_ukm');
     }
-}
+};

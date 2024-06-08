@@ -4,8 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAnggotaUkmTable extends Migration
+return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up()
     {
         Schema::create('anggota_ukm', function (Blueprint $table) {
@@ -23,4 +26,4 @@ class CreateAnggotaUkmTable extends Migration
     {
         Schema::dropIfExists('anggota_ukm');
     }
-}
+};

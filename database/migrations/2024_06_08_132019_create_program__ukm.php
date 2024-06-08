@@ -4,8 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProgramUkmTable extends Migration
+return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up()
     {
         Schema::create('program_ukm', function (Blueprint $table) {
@@ -24,4 +27,4 @@ class CreateProgramUkmTable extends Migration
     {
         Schema::dropIfExists('program_ukm');
     }
-}
+};
