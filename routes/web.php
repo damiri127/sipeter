@@ -38,61 +38,6 @@ Route::group(['middleware' => ['auth', 'ceklevel:kepala-puskesmas']], function()
     });
 });
 
-Route::group(['middleware' => ['auth', 'ceklevel:admin,petugas-loket']], function(){
-    Route::get('/petugas_loket', [PetugasLoketController::class, 'index'])->name('dashboard_petugasloket');
-    Route::get('/petugas_loket/datakunjungan', [PetugasLoketController::class, 'data_kunjungan'])->name('data_kunjungan');
-    Route::get('/petugas_loket/datakunjungan/inputkunjunganbaru/{NIK}', [PetugasLoketController::class,'add_datakunjungan'])->name('add_datakunjungan');
-    Route::post('/petugas_loket/datakunjungan/insertkunjunganbaru', [PetugasLoketController::class,'insert_datapengunjung'])->name('insert_datakunjungan');
-    Route::get('/petugas_loket/datakunjungan/editDataKunjungan/{id_kunjungan}', [PetugasLoketController::class,'edit_datakunjungan'])->name('edit_datakunjungan');
-    Route::post('/petugas_loket/datakunjungan/updateKunjungan/{id_kunjungan}', [PetugasLoketController::class,'update_datakunjungan'])->name('update_datakunjungan');
-    Route::get('/petugas_loket/datakunjungan/hapusKunjungan/{id_kunjungan}', [PetugasLoketController::class,'delete_datakunjungan'])->name('delete_datakunjungan');
-    Route::post('/petugas_loket/datakunjungan/validasikunjunganlama', [PetugasLoketController::class,'validation_pengunjunglama'])->name('validation_pengunjunglama');
-    Route::post('/petugas_loket/datakunjungan/inputKunjunganPengunjungLama/{id_pengunjung}', [PetugasLoketController::class,'insert_kunjunganPengunjungLama'])->name('insert_kunjunganPengunjungLama');
-
-
-    Route::get('/petugas_loket/arsip-pengunjunng',[ArsipPengunjungController::class, 'index'])->name('index_arsippengunjung');
-    Route::get('/petugas_loket/arsip-pengunjunng/add_datapengunjung',[ArsipPengunjungController::class, 'add_datapengunjung'])->name('add_datapengunjung');
-    Route::post('/petugas_loket/arsip-pengunjunng/insert_datakunjungan',[ArsipPengunjungController::class, 'insert_datapengunjung'])->name('insert_datakunjunganarsip');
-    Route::get('/petugas_loket/arsip-pengunjung/edit_data/{id_pengunjung}',[ArsipPengunjungController::class, 'edit_datapengunjung'])->name('edit_datapengunjung');
-    Route::post('/petugas_loket/arsip-pengunjung/update_data/{id_pengunjung}',[ArsipPengunjungController::class, 'update_datapengunjung'])->name('update_datapengunjung');
-    Route::get('/petugas_loket/arsip-pengunjung/delete_data/{id_pengunjung}',[ArsipPengunjungController::class, 'delete_datapengunjung'])->name('delete_datapengunjung');
-});
-
-Route::group(['middleware' => ['auth', 'ceklevel:admin,poliumum']], function () {
-    Route::get('/poliumum', [PoliUmumController::class, 'index'])->name('dashboard_poliumum');
-    Route::get('/poliumum/datakunjungan', [PoliUmumController::class, 'data_poli'])->name('data_poliumum');
-    Route::get('/poliumum/datakunjungan/update/{id_kunjungan}', [PoliUmumController::class, 'add_rekammedis'])->name('add_rekammedis');
-    Route::get('/poliumum/search-icdx', [ICDXController::class, 'search_icdx'])->name('search_icdx');
-    Route::post('/poliumum/datakunjungan/store/{id_kunjungan}', [PoliUmumController::class, 'store_rekammedis'])->name('insert_rekammedis');
-    Route::get('/poliumum/datakunjungan/edit/{id_kunjungan}', [PoliUmumController::class, 'update_rekammedis'])->name('ubah_rekammedis');
-    Route::post('/poliumum/datakunjungan/ubah/{id_rekam_medis}', [PoliUmumController::class, 'edit_rekammedis'])->name('perbarui_rekammedis');
-    Route::get('/poliumum/datakunjungan/delete/{id_kunjungan}', [PoliUmumController::class, 'delete_kunjungan'])->name('destroy_kunjungan');
-    //Route::resource('/poliumum', PoliumumController::class);
-});
-
-Route::group(['middleware' => ['auth', 'ceklevel:admin,poligizi']], function(){ 
-    Route::get('/poligizi', [PoliGiziController::class, 'index'])->name('dashboard_poligizi');
-    Route::get('/poligizi/data_kunjunganpasien', [PoliGiziController::class, 'data_kunjungan'])->name('data_kunjunganpoligizi');
-    Route::get('/poligizi/data_kunjunganpasien/{id_kunjungan}', [PoliGiziController::class, 'add_rekammedis'])->name('add_rekammedispoligizi');
-    Route::get('/poligizi/search-icdx', [ICDXController::class, 'search_icdx'])->name('search_icdx');
-    Route::post('/poligizi/store_rekammedispoligizi/{id_kunjungan}',[PoliGiziController::class, 'store_rekammedis'])->name('store_rekammedis');
-    Route::get('/poligizi/edit_rekammedispoligizi/{id_rekam_medis_poligizi}',[PoliGiziController::class, 'edit_rekammedis'])->name('edit_rekammedis');
-    Route::post('/poligizi/update_rekammedis/{id_rekam_medis_poligizi}',[PoliGiziController::class, 'update_rekammedis'])->name('update_rekammedis');
-    Route::get('/poligizi/delete/{id_kunjungan}',[PoliGiziController::class, 'delete_kunjunganpasien'])->name('delete_kunjunganpasien');
-    
-
-    
-    
-    
-
-    
-    
-    
-    
-    // Route::get('/poliumum/datakunjungan', [PoliUmumController::class, 'data_poli'])->name('data_poliumum');
-});
-
-
 //Route Login
 
 Route::get('/login', function () {
@@ -103,15 +48,6 @@ Route::get('/', function () {
     if(Auth::check()){
         if(auth()->user()->level=="admin"){
             return redirect(route('admin'));
-        }
-        if(auth()->user()->level=="petugas-loket"){
-            return redirect(route('dashboard_petugasloket'));
-        }
-        if(auth()->user()->level=="poliumum"){
-            return redirect(route('dashboard_poliumum'));
-        }
-        if(auth()->user()->level=="poligizi"){
-            return redirect(route('dashboard_poligizi'));
         }
     }
     return redirect(route('login'));
