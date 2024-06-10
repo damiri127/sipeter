@@ -132,7 +132,7 @@
                 <span class="fas fa-key"></span>
                 <input type="password" name="password" id="pwd" placeholder="Password" required>
             </div>
-            <button class="btn mt-3">Login</button>
+            <button class="btn mt-3">Masuk</button>
         </form>
         <center>
             <div class="text-center fs-6 mt-3">

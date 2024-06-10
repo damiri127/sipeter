@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->string('username');
             $table->string('nip', 18)->unique();
             $table->string('password');
+            $table->enum('level', ['admin', 'kepala-puskesmas', 'petugas-ukm']);
             $table->timestamps();
             // Foreign key reference to the struktur_jabatan table
             $table->foreignId('id_struktur_jabatan')->references('id_struktur_jabatan')->on('struktur_jabatan')->onDelete('cascade');

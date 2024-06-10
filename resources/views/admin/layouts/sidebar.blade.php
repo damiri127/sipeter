@@ -38,8 +38,13 @@
                 </div>
             </div>
             <ul class="nav nav-primary">
-                <li class="nav-item active">
-                    <a  href="#dashboard" aria-expanded="false">
+                @if (Route::currentRouteName() == 'admin')
+                    {{ $dashboard_status = 'active'}}
+                @else
+                    {{ $dashboard_status = 'inactive'}}
+                @endif
+                <li class="nav-item {{ $dashboard_status }}">
+                    <a  href="{{ route('admin') }}" aria-expanded="false">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
                     </a>
@@ -51,7 +56,7 @@
                     <h4 class="text-section">Data Master</h4>
                 </li>
                 <li class="nav-item">
-                    <a data-toggle="collapse" href="#base">
+                    <a data-toggle="collapse" href="#base" class="nav-link {{ Request::is('data_struktur_jabatan') ? 'active' : ''}}">
                         <i class="fas fa-user"></i>
                         <p>Data Pengguna</p>
                         <span class="caret"></span>
@@ -59,77 +64,17 @@
                     <div class="collapse" id="base">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="#">
-                                    <span class="sub-item">Admin</span>
+                                <a href="{{ route('data_struktur_jabatan') }}">
+                                    <span class="sub-item">Data Struktur Jabatan</span>
                                 </a>
                             </li>
+                            {{-- @foreach ($data as $item)
                             <li>
                                 <a href="#">
-                                    <span class="sub-item">Kepala Puskesmas</span>
+                                    <span class="sub-item">{{ $item->nama_struktur_jabatan }}</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <span class="sub-item">Petugas</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-section">
-                    <span class="sidebar-mini-icon">
-                        <i class="fa fa-ellipsis-h"></i>
-                    </span>
-                    <h4 class="text-section">Data Unit</h4>
-                </li>
-                <li class="nav-item">
-                    <a href="#sidebarLayouts">
-                        <i class="fas fa-th-list"></i>
-                        <p>Data Kegiatan</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#sidebarLayouts">
-                        <i class="fas fa-stethoscope"></i>
-                        <p>Data Kesakitan</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#sidebarLayouts">
-                        <i class="fas fa-th-list"></i>
-                        <p>Data Gizi dan KIA</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#sidebarLayouts">
-                        <i class="fas fa-th-list"></i>
-                        <p>Data Imunisasi dan PPM</p>
-                    </a>
-                </li>
-                <li class="nav-section">
-                    <span class="sidebar-mini-icon">
-                        <i class="fa fa-ellipsis-h"></i>
-                    </span>
-                    <h4 class="text-section">Laporan</h4>
-                </li>
-                <li class="nav-item">
-                    <a data-toggle="collapse" href="#sptp">
-                        <i class="fas fa-th-list"></i>
-                        <p>Data Laporan SP2TP</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="sptp">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="#">
-                                    <span class="sub-item">Laporan Bulanan</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="sub-item">Laporan Tahunan</span>
-                                </a>
-                            </li>
+                            @endforeach --}}
                         </ul>
                     </div>
                 </li>

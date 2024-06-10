@@ -27,18 +27,11 @@ class LoginController extends Controller
             } elseif (auth()->user()->level == "kepala-puskesmas") {
                 return redirect()->intended('kepala-puskesmas');
                 //dd("kepala-puskesmas");
-            } elseif (auth()->user()->level == "petugas-loket") {
-                return redirect()->intended('petugas_loket');
-            } else if(auth()->user()->level == "poliumum"){
-                return redirect()->intended('poliumum');
-            } else if(auth()->user()->level == "poligizi"){
-                return redirect()->intended('poligizi');
-            }
-
+            } 
             return back()->withErrors('Error');
         }
 
-        return redirect(route('login'))->with('error', 'Username dan Password yang anda masukan salah');
+        return redirect(route('login'))->with('error', 'NIP dan Password yang anda masukan salah');
 
     }
     public function logout()

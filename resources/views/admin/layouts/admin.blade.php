@@ -24,6 +24,9 @@
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="{{asset("layout_asset/examples/assets/css/demo.css")}}">
+
+	{{-- import JS file--}}
+	@include('admin.layouts.javascript')
 </head>
 <body>
 	<div class="wrapper">
@@ -56,47 +59,16 @@
         <!-- End Sidebar -->
 
 		<!-- Main content -->
-        @yield('content')
+		<div class="main-panel">
+			<div class="content">
+				<div class="page-inner">
+					@yield('content')
+				</div>
+			</div>
+		</div>
 		<!-- End Main content -->
 
 	</div>
-	<!--   Core JS Files   -->
-	<script src="{{asset("layout_asset/examples/assets/js/core/jquery.3.2.1.min.js")}}"></script>
-	<script src="{{asset("layout_asset/examples/assets/js/core/popper.min.js")}}"></script>
-	<script src="{{asset("layout_asset/examples/assets/js/core/bootstrap.min.js")}}"></script>
-
-	<!-- jQuery UI -->
-	<script src="{{asset("layout_asset/examples/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js")}}"></script>
-	<script src="{{asset("layout_asset/examples/assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js")}}"></script>
-
-	<!-- jQuery Scrollbar -->
-	<script src="{{asset("layout_asset/examples/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js")}}"></script>
-
-
-	<!-- Chart JS -->
-	<script src="{{asset("layout_asset/examples/assets/js/plugin/chart.js/chart.min.js")}}"></script>
-
-	<!-- jQuery Sparkline -->
-	<script src="{{asset("layout_asset/examples/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js")}}"></script>
-
-	<!-- Chart Circle -->
-	<script src="{{asset("layout_asset/examples/assets/js/plugin/chart-circle/circles.min.js")}}"></script>
-
-	<!-- Datatables -->
-	<script src="{{asset("layout_asset/examples/assets/js/plugin/datatables/datatables.min.js")}}"></script>
-
-	<!-- Bootstrap Notify -->
-	<script src="{{asset("layout_asset/examples/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js")}}"></script>
-
-	<!-- jQuery Vector Maps -->
-	<script src="{{asset("layout_asset/examples/assets/js/plugin/jqvmap/jquery.vmap.min.js")}}"></script>
-	<script src="{{asset("layout_asset/examples/assets/js/plugin/jqvmap/maps/jquery.vmap.world.js")}}"></script>
-
-	<!-- Sweet Alert -->
-	<script src="{{asset("layout_asset/examples/assets/js/plugin/sweetalert/sweetalert.min.js")}}"></script>
-
-	<!-- Atlantis JS -->
-	<script src="{{asset("layout_asset/examples/assets/js/atlantis.min.js")}}"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-Ogwbqwo1XmJhMjnlbvqQ8wNsIkEH3mD9zV+yQY8fUXRig6yMaxqU0ONa/N0y0XqR" crossorigin="anonymous"></script>
 </body>
 </html>

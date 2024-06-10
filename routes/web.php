@@ -3,13 +3,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ICDX\ICDXController;
-use App\Http\Controllers\PoliGizi\PoliGiziController;
-use App\Http\Controllers\PoliUmum\PoliUmumController;
-use App\Http\Controllers\PetugasLoket\PetugasLoketController;
-use App\Http\Controllers\PetugasLoket\ArsipPengunjungController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +26,13 @@ use App\Http\Controllers\PetugasLoket\ArsipPengunjungController;
 Route::group(['middleware' => ['auth', 'ceklevel:admin']], function(){
     // mengarah ke dashboard admin
     Route::get('admin', [DashboardController::class, 'indexAdmin'])->name('admin');
+    Route::get('/admin/data-struktur-jabatan', [AdminController::class, 'index'])->name('data_struktur_jabatan');
+    Route::get('/admin/data-struktur-jabatan/create', [AdminController::class, 'create'])->name('create_jabatan');
+    Route::post('/admin/data-struktur-jabatan', [AdminController::class, 'store'])->name('store_jabatan');
+    Route::get('/admin/data-struktur-jabatan/edit/{id_struktur_jabatan}', [AdminController::class, 'edit'])->name('edit_jabatan');
+    Route::post('/admin/data-struktur-jabatan/update/{id_struktur_jabatan}', [AdminController::class, 'update'])->name('update_jabatan');
+    Route::get('/admin/data-struktur-jabatan/delete/{id_struktur_jabatan}', [AdminController::class, 'delete'])->name('delete_jabatan');
+    //Route::get('/admin/data-struktur_jabatan/sidebar', [AdminController::class, 'sidebar'])->name('sidebar');
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:kepala-puskesmas']], function(){

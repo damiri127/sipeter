@@ -22,11 +22,11 @@
           <img src="#" alt="Avatar" class="avatar">
         </div> --}}
         <div class="container">
-          <label for="username"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="username" required>
+          <label for="username"><b>NIP</b></label>
+          <input type="number" placeholder="Masukkan nip kamu" name="nip" required>
       
           <label for="password"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="password" required>
+          <input type="password" placeholder="Masukkan password kamu" name="password" required>
       
           <button type="submit">Login</button>
         </div>

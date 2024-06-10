@@ -13,34 +13,14 @@ class userseeders extends Seeder
      */
     public function run(): void
     {
-        //
+        // Create User 
         DB::table('users')->insert([
-            'name' => "Petugas Ananta",
-            'username' => 'petugasloket',
+            'nama' => "Fathur",
+            'username' => "AdminFathur",
+            'nip' => '001122334455667788',
             'password' => bcrypt('developers'),
-            'level'=> "petugas-loket" 
-
-        ]);
-
-        DB::table('users')->insert([
-            'name' => "PoliGizi Ananta",
-            'username' => 'poligizi',
-            'password' => bcrypt('developers'),
-            'level'=> "poligizi"
-        ]);
-
-        DB::table('users')->insert([
-            'name' => "Cepi",
-            'username' => 'damiri',
-            'password' => bcrypt('developers'),
-            'level'=> "poliumum"
-        ]);
-
-        DB::table('users')->insert([
-            'name' => "Fathur",
-            'username' => 'fathur03',
-            'password' => bcrypt('developers'),
-            'level'=> "admin"
+            'level'=> "admin",
+            'id_struktur_jabatan' => "1"
         ]);
     }
 }
