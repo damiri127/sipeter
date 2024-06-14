@@ -1,6 +1,9 @@
 <?php
 
 
+use App\Http\Controllers\admin\ManagementSubUKM;
+use App\Http\Controllers\admin\ManagementUKM;
+use App\Http\Controllers\admin\ManagementUsersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
@@ -33,6 +36,36 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function(){
     Route::post('/admin/data-struktur-jabatan/update/{id_struktur_jabatan}', [AdminController::class, 'update'])->name('update_jabatan');
     Route::get('/admin/data-struktur-jabatan/delete/{id_struktur_jabatan}', [AdminController::class, 'delete'])->name('delete_jabatan');
     //Route::get('/admin/data-struktur_jabatan/sidebar', [AdminController::class, 'sidebar'])->name('sidebar');
+
+    Route::get('/admin/data-user/{id_struktur_jabatan}', [ManagementUsersController::class, 'index'])->name('mengelola_pengguna');
+    Route::get('/admin/data-user/add-user/{id_struktur_jabatan}', [ManagementUsersController::class, 'add'])->name('tambah_pengguna');
+    Route::post('/admin/data-user/insert-user/{id_struktur_jabatan}', [ManagementUsersController::class, 'store'])->name('insert_pengguna');
+    Route::get('/admin/data-user/edit-user/{id}', [ManagementUsersController::class, 'edit'])->name('edit_pengguna');
+    Route::post('/admin/data-user/update-user/{id}', [ManagementUsersController::class, 'update'])->name('update_pengguna');
+    Route::get('/admin/data-user/delete-user/{id}', [ManagementUsersController::class, 'delete'])->name('delete_pengguna');
+
+    // Management UKM
+    Route::get('/admin/data-ukm/', [ManagementUKM::class, 'index'])->name('mengelola_ukm');
+    Route::get('/admin/add-data-ukm/', [ManagementUKM::class, 'add'])->name('tambah_ukm');
+    Route::post('/admin/insert-data-ukm/', [ManagementUKM::class, 'store'])->name('simpan_ukm');
+    Route::get('/admin/edit-data-ukm/{id_ukm}', [ManagementUKM::class, 'edit'])->name('edit_ukm');
+    Route::post('/admin/update-data-ukm/{id_ukm}', [ManagementUKM::class, 'update'])->name('update_ukm');
+    Route::get('/admin/delete-data-ukm/{id_ukm}', [ManagementUKM::class, 'delete'])->name('delete_ukm');
+    
+    // Search User 
+    Route::get('/admin/data-pj-ukm/', [ManagementUKM::class, 'search_pj_ukm'])->name('search_pj_ukm');
+
+
+    //Management Subdivisi UKM 
+    Route::get('/admin/data-subdivisi-ukm/{id_ukm}', [ManagementSubUKM::class, 'index'])->name('mengelola_subdivisi_ukm');
+    Route::get('/admin/add-data-subdivisi-ukm/{id_ukm}', [ManagementSubUKM::class, 'add'])->name('add_subdivisi_ukm');
+    Route::post('/admin/store-data-subdivisi-ukm/{id_ukm}', [ManagementSubUKM::class, 'store'])->name('store_subdivisi_ukm');
+    Route::get('/admin/edit-data-subdivisi-ukm/{id_sub_kategori_ukm}', [ManagementSubUKM::class, 'edit'])->name('edit_subdivisi_ukm');
+    Route::post('/admin/update-data-subdivisi-ukm/{id_sub_kategori_ukm}', [ManagementSubUKM::class, 'update'])->name('update_subdivisi_ukm');
+    Route::get('/admin/delete-data-subdivisi-ukm/{id_sub_kategori_ukm}', [ManagementSubUKM::class, 'delete'])->name('delete_subdivisi_ukm');
+    
+    
+    
 });
 
 Route::group(['middleware' => ['auth', 'ceklevel:kepala-puskesmas']], function(){

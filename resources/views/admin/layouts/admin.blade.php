@@ -58,6 +58,37 @@
         @include('admin.layouts.sidebar')
         <!-- End Sidebar -->
 
+		{{-- Session Messege Control --}}
+		    {{-- SWAL MESSEGE --}}
+			<div id="sessionMessegeResponse">
+				@if (session("success"))
+				<script>
+					swal("Berhasil", "{{session('success')}}", {
+						icon : "success",
+						buttons: {
+							confirm: {
+								className : 'btn btn-success'
+							}
+						},
+					});
+				</script>
+				@endif
+		
+				@if (session('error'))
+					<script>
+						swal("Gagal!", "{{session('error')}}", {
+							icon : "error",
+							buttons: {
+								confirm: {
+									className : 'btn btn-danger'
+								}
+							},
+						});
+					</script>
+				@endif
+			</div>
+		{{-- End Session Messege Control --}}
+
 		<!-- Main content -->
 		<div class="main-panel">
 			<div class="content">

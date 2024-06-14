@@ -42,4 +42,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function ukm() {
+        return $this->hasOne(UKM::class, 'penanggung_jawab_ukm');
+    }
+
+    public function sub_kategori_ukm() {
+        return $this->hasOne(SubKategoriUKM::class, 'penanggung_jawab_sub_kategori_ukm');
+    }
 }
