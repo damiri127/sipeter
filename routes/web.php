@@ -1,9 +1,13 @@
 <?php
 
 
+use App\Http\Controllers\admin\DesaController;
+use App\Http\Controllers\admin\FasilitasAirBersihController;
+use App\Http\Controllers\admin\KesehatanLingkunganController;
 use App\Http\Controllers\admin\ManagementSubUKM;
 use App\Http\Controllers\admin\ManagementUKM;
 use App\Http\Controllers\admin\ManagementUsersController;
+use App\Http\Controllers\admin\ProgramUkmController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
@@ -63,6 +67,33 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function(){
     Route::get('/admin/edit-data-subdivisi-ukm/{id_sub_kategori_ukm}', [ManagementSubUKM::class, 'edit'])->name('edit_subdivisi_ukm');
     Route::post('/admin/update-data-subdivisi-ukm/{id_sub_kategori_ukm}', [ManagementSubUKM::class, 'update'])->name('update_subdivisi_ukm');
     Route::get('/admin/delete-data-subdivisi-ukm/{id_sub_kategori_ukm}', [ManagementSubUKM::class, 'delete'])->name('delete_subdivisi_ukm');
+    
+    //Management Program UKM Controller
+    Route::get('/admin/data-program-ukm/{id_sub_kategori_ukm}', [ProgramUkmController::class, 'index'])->name('mengelola_program_ukm');
+    Route::get('/admin/add-data-program-ukm/{id_sub_kategori_ukm}', [ProgramUkmController::class, 'add'])->name('add_program_ukm');
+    Route::post('/admin/store-data-program-ukm/{id_sub_kategori_ukm}', [ProgramUkmController::class, 'store'])->name('store_program_ukm');
+    Route::get('/admin/edit-data-program-ukm/{id_program_ukm}', [ProgramUkmController::class, 'edit'])->name('edit_program_ukm');
+    Route::post('/admin/update-data-program-ukm/{id_program_ukm}', [ProgramUkmController::class, 'update'])->name('update_program_ukm');
+    Route::get('/admin/delete-data-program-ukm/{id_program_ukm}', [ProgramUkmController::class, 'delete'])->name('delete_program_ukm');
+
+    // Management Desa 
+    Route::get('/admin/data-wilayah-kerja', [DesaController::class, 'index'])->name('mengelola_desa');
+    Route::get('/admin/add-data-wilayah-kerja', [DesaController::class, 'add'])->name('add_desa');
+    Route::post('/admin/store-data-wilayah-kerja', [DesaController::class, 'store'])->name('store_desa');
+
+
+    // Kesehatan Lingkungan 
+    Route::get('/admin/data-kesehatan-lingkungan', [KesehatanLingkunganController::class, 'index'])->name('kesehatan_lingkungan');
+
+    // Kesehatan Faslitias Air
+    Route::get('/admin/data-kesehatan-lingkungan-program-air-bersih', [FasilitasAirBersihController::class, 'index'])->name('fasilitas_air_bersih');
+    Route::get('/admin/add-data-kesehatan-lingkungan-program-air-bersih', [FasilitasAirBersihController::class, 'add'])->name('add_fasilitas_air_bersih');
+    Route::post('/admin/store-data-kesehatan-lingkungan-program-air-bersih', [FasilitasAirBersihController::class, 'store'])->name('store_fasilitas_air_bersih');
+    
+    
+    
+    
+    
     
     
     

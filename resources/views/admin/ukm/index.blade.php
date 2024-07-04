@@ -33,9 +33,9 @@
                                 <td> {{$item->nama_jenis_ukm}} </td>
                                 <td> {{$item->nama}} </td>
                                 <td>
-                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-info"></i> Info</a>
+                                    <a href="{{route('mengelola_subdivisi_ukm', ['id_ukm'=>$item->id_ukm])}}" class="btn btn-sm btn-info"><i class="fas fa-info"></i> Info</a>
                                     <a href="{{route('edit_ukm', ['id_ukm'=>$item->id_ukm])}}" class="btn btn-sm btn-warning"> <i class="fas fa-edit"></i> Update</a>
-                                    <a href="#"  data-href="{{route('delete_ukm', ['id_ukm'=>$item->id_ukm])}}" id="deleteConfirmation{{$item->id_ukm}}" data-name="{{$item->nama_jenis_ukm}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a>
+                                    {{-- <a href="#"  data-href="{{route('delete_ukm', ['id_ukm'=>$item->id_ukm])}}" id="deleteConfirmation{{$item->id_ukm}}" data-name="{{$item->nama_jenis_ukm}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i> Hapus</a> --}}
                                     <script>
                                         $("#deleteConfirmation"+{{$item->id_ukm}}).click(function () {
                                             swal({

@@ -116,6 +116,24 @@
                         </ul>
                     </div>
                 </li>
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">Wilayah Kerja</h4>
+                </li>
+                <li class="nav-item ">
+                    <a  href="{{route('mengelola_desa')}}" aria-expanded="false">
+                        <i class="fas fa-location-arrow"></i>
+                        <p>Desa</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a  href="{{route('kesehatan_lingkungan')}}" aria-expanded="false">
+                        <i class="fas fa-location-arrow"></i>
+                        <p>Kesehatan Lingkungan</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

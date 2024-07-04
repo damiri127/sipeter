@@ -10,36 +10,6 @@
                     <div class="col-2">
                         <a href="{{ route('create_jabatan') }}" class="btn btn-md btn-success">Tambah</a>
                     </div>
-                    {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inputModal">
-                        Input Details
-                    </button>
-                    
-                    <div class="modal fade" id="inputModal" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="inputModalLabel">Enter Details</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="#" method="post">
-                                <div class="mb-3">
-                                    <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
-                                </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
             <div class="card-body">
@@ -101,7 +71,7 @@
                                         </div>
                                         {{-- Modal end --}}
                                         <a href="/admin/data-struktur-jabatan/edit/{{ $item->id_struktur_jabatan }}" class="btn btn-sm btn-warning">Edit</a>
-                                        <a href="/admin/data-struktur-jabatan/delete/{{ $item->id_struktur_jabatan }}" class="btn btn-sm btn-danger">Hapus</a>
+                                        {{-- <a href="/admin/data-struktur-jabatan/delete/{{ $item->id_struktur_jabatan }}" class="btn btn-sm btn-danger">Hapus</a> --}}
                                     </td>
                                 </tr>
                             @endforeach

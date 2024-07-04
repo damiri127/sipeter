@@ -18,8 +18,9 @@ class AdminController extends Controller
     }
 
     public function create(){
+        $jenis_ukm = UKM::all();
         $jabatan = StrukturJabatan::get();
-        return view('admin.data-struktur-jabatan.create', ['jabatan'=>$jabatan]);
+        return view('admin.data-struktur-jabatan.create', ['jabatan'=>$jabatan, 'jenis_ukm'=>$jenis_ukm]);
     }
 
     public function store(Request $request){

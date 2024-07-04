@@ -33,7 +33,7 @@
                                 <td> {{$divisi->nama_sub_kategori_ukm}} </td>
                                 <td> {{$divisi->nama}} </td>
                                 <td>
-                                    <a href="#" class="btn btn-sm btn-info"><i class="fas fa-info"></i> Info</a>
+                                    <a href="{{route('mengelola_program_ukm', ['id_sub_kategori_ukm'=>$divisi->id_sub_kategori_ukm])}}" class="btn btn-sm btn-info"><i class="fas fa-info"></i> Info</a>
                                     <a href="{{route('edit_subdivisi_ukm', ['id_sub_kategori_ukm'=>$divisi->id_sub_kategori_ukm])}}" class="btn btn-sm btn-warning"><i class="fas fa-update"></i> Update</a>
                                     <a href="#" class="btn btn-sm btn-danger" id="deleteConfirmation{{$divisi->id_sub_kategori_ukm}}" data-href="{{route("delete_subdivisi_ukm", ["id_sub_kategori_ukm"=>$divisi->id_sub_kategori_ukm])}}" data-name="{{$divisi->nama_sub_kategori_ukm}}"><i class="fas fa-trash" ></i> Hapus</a>
                                     <script>
@@ -60,7 +60,6 @@
                                             });
                                         });
                                     </script>
-
                                 </td>
                             </tr>                            
                         @endforeach
